@@ -10,13 +10,20 @@ namespace StaemDatabaseApp.Model
     {
         public Game(int id, String name, String description, int quantity, float price, Status status, Developer developer)
         {
-            this.id = id;
-            this.name = name;
-            this.description = description;
-            this.quantity = quantity;
-            this.price = price;
-            this.status = status;
-            this.developer = developer;
+            //this.id = id;
+            //this.name = name;
+            //this.description = description;
+            //this.quantity = quantity;
+            //this.price = price;
+            //this.status = status;
+            //this.developer = developer;
+            Id = id;
+            Name = name;
+            Description = description;
+            Quantity = quantity;
+            Price = price;
+            Status = status;
+            Developer = developer;
         }
 
         private int id;

@@ -10,11 +10,16 @@ namespace StaemDatabaseApp.Model
     {
         public Customer(int id, String name, String surname, float priceMultiplier, int gamesBought)
         {
-            this.id = id;
-            this.name = name;
-            this.surname = surname;
-            this.priceMultiplier = priceMultiplier;
-            this.gamesBought = gamesBought;
+            //this.id = id;
+            //this.name = name;
+            //this.surname = surname;
+            //this.priceMultiplier = priceMultiplier;
+            //this.gamesBought = gamesBought;
+            Id = id;
+            Name = name;
+            Surname = surname;
+            PriceMultiplier = priceMultiplier;
+            GamesBought = gamesBought;
         }
 
         private int id;

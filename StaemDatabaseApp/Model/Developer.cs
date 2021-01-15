@@ -10,9 +10,12 @@ namespace StaemDatabaseApp.Model
     {
         public Developer(int id, String name, String contact)
         {
-            this.id = id;
-            this.name = name;
-            this.contact = contact;
+            //this.id = id;
+            //this.name = name;
+            //this.contact = contact;
+            Id = id;
+            Name = name;
+            Contact = contact;
         }
 
         private int id;
