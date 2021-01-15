@@ -36,5 +36,10 @@ namespace StaemDatabaseApp.Helper
             }
         }
 
+        public static bool ConnectToDatabase(string login, string password)
+        {
+            return false;
+        }
+
     }
 }
