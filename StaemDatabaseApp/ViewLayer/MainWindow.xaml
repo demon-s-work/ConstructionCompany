@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StaemDatabaseApp"
         mc:Ignorable="d"
-        Title="MainWindow"
+        Title="Staem"
         Height="450"
         Width="800"
         WindowStartupLocation="CenterScreen"
@@ -44,7 +44,7 @@
                     <StackPanel Margin="10"
                                 Grid.ColumnSpan="2">
                         <Button x:Name="showDevelopersButton"
-                                Content="Show Customers"
+                                Content="Show Developers"
                                 Margin="5"
                                 VerticalAlignment="Center" />
                         <Button x:Name="button3"
@@ -67,7 +67,7 @@
                     <StackPanel Margin="10"
                                 Grid.ColumnSpan="2">
                         <Button x:Name="showGamesButton"
-                                Content="Show Customers"
+                                Content="Show Games"
                                 Margin="5"
                                 VerticalAlignment="Center" />
                         <Button x:Name="button4"
@@ -130,7 +130,7 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Margin="10">
                         <Button x:Name="showStatusesButton"
-                                Content="Show Customers"
+                                Content="Show Statuses"
                                 Margin="5"
                                 VerticalAlignment="Center" />
                         <Button x:Name="button7"
@@ -152,7 +152,7 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Margin="10">
                         <Button x:Name="showSuppliersButton"
-                                Content="Show Customers"
+                                Content="Show Suppliers"
                                 Margin="5"
                                 VerticalAlignment="Center" />
                         <Button x:Name="button2"
