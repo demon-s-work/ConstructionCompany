@@ -32,8 +32,8 @@ namespace StaemDatabaseApp.ViewLayer
             String password = passwordTextBox.Password;
             if (DBHelper.ConnectToDatabase(login, password))
             {
-                //Close();
-                //mainWindow.Show();
+                Close();
+                mainWindow.Show();
                 //Close();
             }
         }
