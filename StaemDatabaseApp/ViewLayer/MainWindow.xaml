@@ -22,7 +22,8 @@
                         <Button x:Name="showCustomersButton"
                                 Content="Show Customers"
                                 Margin="5"
-                                VerticalAlignment="Center" />
+                                VerticalAlignment="Center"
+                                Click="showCustomersButton_Click" />
                         <Button x:Name="button1"
                                 Content="..."
                                 Margin="5"

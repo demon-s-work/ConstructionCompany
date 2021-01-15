@@ -25,13 +25,11 @@ namespace StaemDatabaseApp
         public MainWindow()
         {
             InitializeComponent();
+        }
 
-            var data = CustomersDA.RetrieveAllCustomers();
-            foreach(var d in data)
-            {
-                Console.WriteLine(d.Name);
-            }
-            customersDataGrid.ItemsSource = data;
+        private void showCustomersButton_Click(object sender, RoutedEventArgs e)
+        {
+            customersDataGrid.ItemsSource = CustomersDA.RetrieveAllCustomers();
         }
     }
 }

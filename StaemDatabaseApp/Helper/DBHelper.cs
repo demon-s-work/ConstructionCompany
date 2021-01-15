@@ -85,9 +85,6 @@ namespace StaemDatabaseApp.Helper
         {
             try
             {
-
-                Console.WriteLine("===connection null?");
-                Console.WriteLine(connection == null);
                 if (connection != null)
                 {
                     connection.Open();
