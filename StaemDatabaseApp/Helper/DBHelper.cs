@@ -45,7 +45,7 @@ namespace StaemDatabaseApp.Helper
             builder.Database = "staem";
             builder.SslMode = MySqlSslMode.None;
             connection = new MySqlConnection(builder.ToString());
-            
+
             try
             {
                 connection.Open();
