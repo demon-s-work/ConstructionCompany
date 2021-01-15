@@ -11,7 +11,7 @@ namespace StaemDatabaseApp.Helper
 {
     public static class DBHelper
     {
-        protected static MySqlConnection connection;
+        private static MySqlConnection connection;
         private static MySqlCommand cmd = null;
         private static DataTable dt;
         private static MySqlDataAdapter sda;
@@ -45,7 +45,7 @@ namespace StaemDatabaseApp.Helper
             builder.Database = "staem";
             builder.SslMode = MySqlSslMode.None;
             connection = new MySqlConnection(builder.ToString());
-            
+
             try
             {
                 connection.Open();
