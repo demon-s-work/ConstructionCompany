@@ -22,8 +22,8 @@ namespace StaemDatabaseApp.Helper
             {
                 MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
                 builder.Server = "127.0.0.1";
-                builder.UserID = "root";
-                builder.Password = "root";
+                builder.UserID = "admin";
+                builder.Password = "admin";
                 builder.Database = "staem";
                 builder.SslMode = MySqlSslMode.None;
                 connection = new MySqlConnection(builder.ToString());
