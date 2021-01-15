@@ -10,10 +10,6 @@ namespace StaemDatabaseApp.Model
     {
         public Order(int id, int quantity, Game game, Supplier supplier)
         {
-            //this.id = id;
-            //this.quantity = quantity;
-            //this.game = game;
-            //this.supplier = supplier;
             Id = id;
             Quantity = quantity;
             Game = game;

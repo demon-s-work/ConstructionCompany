@@ -6,21 +6,28 @@ using System.Threading.Tasks;
 
 namespace StaemDatabaseApp.Model
 {
-    class Developer
+    public class Developer
     {
-        public Developer(int id, String name, String contact)
+        public Developer(string id, string name, string contact)
         {
-            //this.id = id;
-            //this.name = name;
-            //this.contact = contact;
+            int id_ = 0;
+            Int32.TryParse(id, out id_);
+
+            Id = id_;
+            Name = name;
+            Contact = contact;
+        }
+
+        public Developer(int id, string name, string contact)
+        {
             Id = id;
             Name = name;
             Contact = contact;
         }
 
         private int id;
-        private String name;
-        private String contact;
+        private string name;
+        private string contact;
 
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }

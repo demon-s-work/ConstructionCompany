@@ -37,16 +37,15 @@
             <TabItem Header="Developers">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="28*" />
-                        <ColumnDefinition Width="8*" />
-                        <ColumnDefinition Width="161*" />
+                        <ColumnDefinition Width="145*" />
+                        <ColumnDefinition Width="649*" />
                     </Grid.ColumnDefinitions>
-                    <StackPanel Margin="10"
-                                Grid.ColumnSpan="2">
+                    <StackPanel Margin="10">
                         <Button x:Name="showDevelopersButton"
                                 Content="Show Developers"
                                 Margin="5"
-                                VerticalAlignment="Center" />
+                                VerticalAlignment="Center"
+                                Click="showDevelopersButton_Click" />
                         <Button x:Name="button3"
                                 Content="..."
                                 Margin="5"
@@ -60,16 +59,15 @@
             <TabItem Header="Games">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="28*" />
-                        <ColumnDefinition Width="8*" />
-                        <ColumnDefinition Width="161*" />
+                        <ColumnDefinition Width="145*" />
+                        <ColumnDefinition Width="649*" />
                     </Grid.ColumnDefinitions>
-                    <StackPanel Margin="10"
-                                Grid.ColumnSpan="2">
+                    <StackPanel Margin="10">
                         <Button x:Name="showGamesButton"
                                 Content="Show Games"
                                 Margin="5"
-                                VerticalAlignment="Center" />
+                                VerticalAlignment="Center"
+                                Click="showGamesButton_Click" />
                         <Button x:Name="button4"
                                 Content="..."
                                 Margin="5"
@@ -90,7 +88,8 @@
                         <Button x:Name="showOrdersButton"
                                 Content="Show Orders"
                                 Margin="5"
-                                VerticalAlignment="Center" />
+                                VerticalAlignment="Center"
+                                Click="showOrdersButton_Click" />
                         <Button x:Name="button5"
                                 Content="..."
                                 Margin="5"
@@ -111,7 +110,8 @@
                         <Button x:Name="showReservationsButton"
                                 Content="Show Reservations"
                                 Margin="5"
-                                VerticalAlignment="Center" />
+                                VerticalAlignment="Center"
+                                Click="showReservationsButton_Click" />
                         <Button x:Name="button6"
                                 Content="..."
                                 Margin="5"
@@ -132,7 +132,8 @@
                         <Button x:Name="showStatusesButton"
                                 Content="Show Statuses"
                                 Margin="5"
-                                VerticalAlignment="Center" />
+                                VerticalAlignment="Center"
+                                Click="showStatusesButton_Click" />
                         <Button x:Name="button7"
                                 Content="..."
                                 Margin="5"
@@ -147,10 +148,8 @@
             <TabItem Header="Suppliers">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="144*" />
-                        <ColumnDefinition Width="191*" />
-                        <ColumnDefinition Width="59*"/>
-                        <ColumnDefinition Width="394*"/>
+                        <ColumnDefinition Width="145*" />
+                        <ColumnDefinition Width="649*" />
                     </Grid.ColumnDefinitions>
                     <StackPanel Margin="10">
                         <Button x:Name="showSuppliersButton"

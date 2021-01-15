@@ -49,6 +49,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Assets\staem.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -86,6 +89,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DBLayer\DevelopersDA.cs" />
+    <Compile Include="DBLayer\GamesDA.cs" />
+    <Compile Include="DBLayer\OrderDA.cs" />
+    <Compile Include="DBLayer\ReservationsDA.cs" />
+    <Compile Include="DBLayer\StatusDA.cs" />
     <Compile Include="DBLayer\SuppliersDA.cs" />
     <Compile Include="DBLayer\CustomersDA.cs" />
     <Compile Include="Helper\DBHelper.cs" />
@@ -144,6 +152,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\staem.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

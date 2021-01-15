@@ -32,6 +32,31 @@ namespace StaemDatabaseApp
             customersDataGrid.ItemsSource = CustomersDA.RetrieveAllCustomers();
         }
 
+        private void showDevelopersButton_Click(object sender, RoutedEventArgs e)
+        {
+            developersDataGrid.ItemsSource = DevelopersDA.RetriveAllDevelopers();
+        }
+
+        private void showGamesButton_Click(object sender, RoutedEventArgs e)
+        {
+            //gamesDataGrid.ItemsSource = GamesDA.RetrieveAllGames();
+        }
+
+        private void showOrdersButton_Click(object sender, RoutedEventArgs e)
+        {
+            //ordersDataGrid.ItemsSource = OrdersDA.RetrieveAllOrders();
+        }
+
+        private void showReservationsButton_Click(object sender, RoutedEventArgs e)
+        {
+            //reservationsDataGrid.ItemsSource = ReservationsDA.RetrieveAllOrders();
+        }
+
+        private void showStatusesButton_Click(object sender, RoutedEventArgs e)
+        {
+            //statusesDataGrid.ItemsSource = StatusesDA.RetrieveAllStatuses();
+        }
+
         private void showSuppliersButton_Click(object sender, RoutedEventArgs e)
         {
             suppliersDataGrid.ItemsSource = SuppliersDA.retrieveAllSuppliers();

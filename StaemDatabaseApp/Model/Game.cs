@@ -8,15 +8,19 @@ namespace StaemDatabaseApp.Model
 {
     class Game
     {
-        public Game(int id, String name, String description, int quantity, float price, Status status, Developer developer)
+        public Game(string id, string name, string description, string quantity, string price, Status status, Developer developer)
         {
-            //this.id = id;
-            //this.name = name;
-            //this.description = description;
-            //this.quantity = quantity;
-            //this.price = price;
-            //this.status = status;
-            //this.developer = developer;
+            //Id = id;
+            //Name = name;
+            //Description = description;
+            //Quantity = quantity;
+            //Price = price;
+            //Status = status;
+            //Developer = developer;
+        }
+
+        public Game(int id, string name, string description, int quantity, float price, Status status, Developer developer)
+        {
             Id = id;
             Name = name;
             Description = description;
@@ -27,8 +31,8 @@ namespace StaemDatabaseApp.Model
         }
 
         private int id;
-        private String name;
-        private String description;
+        private string name;
+        private string description;
         private int quantity;
         private float price;
         private Status status;

@@ -63,7 +63,7 @@ namespace StaemDatabaseApp.DBLayer
         public static List<Supplier> retrieveAllSuppliers()
         {
             string query = "SELECT * FROM staem.suppliers";
-            cmd = DBHelper.RunQuery(query);
+            cmd = DBHelper.RunQueryNoParameters(query);
             List<Supplier> suppliers = new List<Supplier>();
             if (cmd != null)
             {

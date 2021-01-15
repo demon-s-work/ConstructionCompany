@@ -10,17 +10,17 @@ using System.Threading.Tasks;
 
 namespace StaemDatabaseApp.DBLayer
 {
-    public static class CustomersDA
+    public static class DevelopersDA
     {
         private static MySqlCommand cmd = null;
         private static DataTable dt;
         private static MySqlDataAdapter sda;
 
-        public static List<Customer> RetrieveAllCustomers()
+        public static List<Developer> RetriveAllDevelopers()
         {
-            string query = "SELECT * FROM staem.customers;";
+            string query = "SELECT * FROM staem.developers;";
             cmd = DBHelper.RunQueryNoParameters(query);
-            List<Customer> allCustomers = new List<Customer>();
+            List<Developer> allDevelopers = new List<Developer>();
             if (cmd != null)
             {
                 dt = new DataTable();
@@ -29,15 +29,12 @@ namespace StaemDatabaseApp.DBLayer
                 foreach (DataRow dr in dt.Rows)
                 {
                     string id = dr["ID"].ToString();
-                    string name = dr["Customer_name"].ToString();
-                    string surname = dr["Customer_surname"].ToString();
-                    string priceMultiplier = dr["Customer_price_multiplier"].ToString();
-                    string gamesBought = dr["Customer_games_bought"].ToString();
-                    allCustomers.Add(new Customer(id, name, surname, priceMultiplier, gamesBought));
+                    string developerName = dr["Developer_name"].ToString();
+                    string developerContact = dr["Developer_contact"].ToString();
+                    allDevelopers.Add(new Developer(id, developerName, developerContact));
                 }
             }
-            return allCustomers;
+            return allDevelopers;
         }
-
     }
 }

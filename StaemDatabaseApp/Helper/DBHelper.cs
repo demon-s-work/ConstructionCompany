@@ -81,7 +81,7 @@ namespace StaemDatabaseApp.Helper
             }
         }
 
-        public static MySqlCommand RunQuery(string query)
+        public static MySqlCommand RunQueryNoParameters(string query)
         {
             try
             {

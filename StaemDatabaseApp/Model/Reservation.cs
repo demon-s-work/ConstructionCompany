@@ -10,10 +10,6 @@ namespace StaemDatabaseApp.Model
     {
         public Reservation(int id, DateTime date, Customer customer, Game game)
         {
-            //this.id = id;
-            //this.date = date;
-            //this.customer = customer;
-            //this.game = game;
             Id = id;
             Date = date;
             Customer = customer;
