@@ -11,7 +11,7 @@ namespace StaemDatabaseApp.Helper
 {
     public static class DBHelper
     {
-        private static MySqlConnection connection;
+        protected static MySqlConnection connection;
         private static MySqlCommand cmd = null;
         private static DataTable dt;
         private static MySqlDataAdapter sda;
@@ -38,7 +38,27 @@ namespace StaemDatabaseApp.Helper
 
         public static bool ConnectToDatabase(string login, string password)
         {
-            return false;
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = "127.0.0.1";
+            builder.UserID = login;
+            builder.Password = password;
+            builder.Database = "staem";
+            builder.SslMode = MySqlSslMode.None;
+            connection = new MySqlConnection(builder.ToString());
+            
+            try
+            {
+                connection.Open();
+
+                // Jezeli brak wyjątku -> dane logowania dobre
+                connection.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                return false;
+            }
         }
 
     }
