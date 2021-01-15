@@ -121,6 +121,28 @@
                               Margin="5" />
                 </Grid>
             </TabItem>
+            <TabItem Header="Statuses">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="145*" />
+                        <ColumnDefinition Width="649*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="10">
+                        <Button x:Name="showStatusesButton"
+                                Content="Show Customers"
+                                Margin="5"
+                                VerticalAlignment="Center" />
+                        <Button x:Name="button7"
+                                Content="..."
+                                Margin="5"
+                                VerticalAlignment="Center" />
+                    </StackPanel>
+                    <DataGrid x:Name="statusesDataGrid"
+                              Grid.Column="1"
+                              Margin="5"
+                              Grid.ColumnSpan="2" />
+                </Grid>
+            </TabItem>
             <TabItem Header="Suppliers">
                 <Grid>
                     <Grid.ColumnDefinitions>
