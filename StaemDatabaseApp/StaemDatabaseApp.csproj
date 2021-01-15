@@ -87,6 +87,13 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helper\DBHelper.cs" />
+    <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\Developer.cs" />
+    <Compile Include="Model\Game.cs" />
+    <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\Reservation.cs" />
+    <Compile Include="Model\Status.cs" />
+    <Compile Include="Model\Supplier.cs" />
     <Compile Include="ViewLayer\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
