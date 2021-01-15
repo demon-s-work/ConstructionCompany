@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace StaemDatabaseApp.Model
 {
-    class Supplier
+    public class Supplier
     {
-        public Supplier(int id, String name, String address, String contact)
+        public Supplier(int id, string name, string address, string contact)
         {
             //this.id = id;
             //this.name = name;
@@ -19,10 +19,23 @@ namespace StaemDatabaseApp.Model
             Address = address;
             Contact = contact;
         }
+
+        public Supplier(string id, string name, string address, string contact)
+        {
+            //this.id = id;
+            //this.name = name;
+            //this.address = address;
+            //this.contact = contact;
+            Id = Int32.Parse(id);
+            Name = name;
+            Address = address;
+            Contact = contact;
+        }
+
         private int id;
-        private String name;
-        private String address;
-        private String contact;
+        private string name;
+        private string address;
+        private string contact;
 
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
