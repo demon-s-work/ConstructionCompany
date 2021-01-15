@@ -5,10 +5,167 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StaemDatabaseApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow"
+        Height="450"
+        Width="800"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
     <Grid>
-        
+        <TabControl x:Name="tabControl">
+            <TabItem Header="Customers">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="145*" />
+                        <ColumnDefinition Width="649*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="10">
+                        <Button x:Name="showCustomersButton"
+                                Content="Show Customers"
+                                Margin="5"
+                                VerticalAlignment="Center"
+                                Click="showCustomersButton_Click" />
+                        <Button x:Name="button1"
+                                Content="..."
+                                Margin="5"
+                                VerticalAlignment="Center" />
+                    </StackPanel>
+                    <DataGrid x:Name="customersDataGrid"
+                              Grid.Column="1"
+                              Margin="5" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Developers">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="28*" />
+                        <ColumnDefinition Width="8*" />
+                        <ColumnDefinition Width="161*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="10"
+                                Grid.ColumnSpan="2">
+                        <Button x:Name="showDevelopersButton"
+                                Content="Show Customers"
+                                Margin="5"
+                                VerticalAlignment="Center" />
+                        <Button x:Name="button3"
+                                Content="..."
+                                Margin="5"
+                                VerticalAlignment="Center" />
+                    </StackPanel>
+                    <DataGrid x:Name="developersDataGrid"
+                              Grid.Column="2"
+                              Margin="5" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Games">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="28*" />
+                        <ColumnDefinition Width="8*" />
+                        <ColumnDefinition Width="161*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="10"
+                                Grid.ColumnSpan="2">
+                        <Button x:Name="showGamesButton"
+                                Content="Show Customers"
+                                Margin="5"
+                                VerticalAlignment="Center" />
+                        <Button x:Name="button4"
+                                Content="..."
+                                Margin="5"
+                                VerticalAlignment="Center" />
+                    </StackPanel>
+                    <DataGrid x:Name="gamesDataGrid"
+                              Grid.Column="2"
+                              Margin="5" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Orders">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="145*" />
+                        <ColumnDefinition Width="649*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="10">
+                        <Button x:Name="showOrdersButton"
+                                Content="Show Orders"
+                                Margin="5"
+                                VerticalAlignment="Center" />
+                        <Button x:Name="button5"
+                                Content="..."
+                                Margin="5"
+                                VerticalAlignment="Center" />
+                    </StackPanel>
+                    <DataGrid x:Name="ordersDataGrid"
+                              Grid.Column="1"
+                              Margin="5" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Reservations">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="145*" />
+                        <ColumnDefinition Width="649*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="10">
+                        <Button x:Name="showReservationsButton"
+                                Content="Show Reservations"
+                                Margin="5"
+                                VerticalAlignment="Center" />
+                        <Button x:Name="button6"
+                                Content="..."
+                                Margin="5"
+                                VerticalAlignment="Center" />
+                    </StackPanel>
+                    <DataGrid x:Name="ordersDataGrid1"
+                              Grid.Column="1"
+                              Margin="5" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Statuses">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="145*" />
+                        <ColumnDefinition Width="649*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="10">
+                        <Button x:Name="showStatusesButton"
+                                Content="Show Customers"
+                                Margin="5"
+                                VerticalAlignment="Center" />
+                        <Button x:Name="button7"
+                                Content="..."
+                                Margin="5"
+                                VerticalAlignment="Center" />
+                    </StackPanel>
+                    <DataGrid x:Name="statusesDataGrid"
+                              Grid.Column="1"
+                              Margin="5"
+                              Grid.ColumnSpan="2" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Suppliers">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="145*" />
+                        <ColumnDefinition Width="649*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="10">
+                        <Button x:Name="showSuppliersButton"
+                                Content="Show Customers"
+                                Margin="5"
+                                VerticalAlignment="Center" />
+                        <Button x:Name="button2"
+                                Content="..."
+                                Margin="5"
+                                VerticalAlignment="Center" />
+                    </StackPanel>
+                    <DataGrid x:Name="suppliersDataGrid"
+                              Grid.Column="1"
+                              Margin="5"
+                              Grid.ColumnSpan="2" />
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

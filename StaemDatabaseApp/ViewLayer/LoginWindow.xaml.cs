@@ -27,14 +27,13 @@ namespace StaemDatabaseApp.ViewLayer
 
         private void loginButton_Click(object sender, RoutedEventArgs e)
         {
-            Window mainWindow = new MainWindow();
-            String login = usernameTextBox.Text;
-            String password = passwordTextBox.Password;
+            string login = usernameTextBox.Text;
+            string password = passwordTextBox.Password;
             if (DBHelper.ConnectToDatabase(login, password))
             {
-                //Close();
-                //mainWindow.Show();
-                //Close();
+                Window mainWindow = new MainWindow();
+                mainWindow.Show();
+                Close();
             }
         }
 

@@ -60,7 +60,6 @@ namespace StaemDatabaseApp.Helper
                 connection.Open();
 
                 // Jezeli brak wyjątku -> dane logowania dobre
-                connection.Close();
                 return true;
             }
             catch (MySqlException ex)
@@ -73,9 +72,12 @@ namespace StaemDatabaseApp.Helper
                     case 1045:
                         MessageBox.Show("Invalid username or password, try again.", "Authorization", MessageBoxButton.OK, MessageBoxImage.Information);
                         break;
-
                 }
                 return false;
+            }
+            finally
+            {
+                connection.Close();
             }
         }
 
@@ -83,7 +85,6 @@ namespace StaemDatabaseApp.Helper
         {
             try
             {
-                Console.WriteLine(connection != null);
                 if (connection != null)
                 {
                     connection.Open();
