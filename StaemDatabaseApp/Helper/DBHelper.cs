@@ -22,17 +22,26 @@ namespace StaemDatabaseApp.Helper
             {
                 MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
                 builder.Server = "127.0.0.1";
-                builder.UserID = "admin";
-                builder.Password = "admin";
+                builder.UserID = "root";
+                builder.Password = "root";
                 builder.Database = "staem";
-                builder.SslMode = MySqlSslMode.None;
+                builder.SslMode = MySqlSslMode.Required;
                 connection = new MySqlConnection(builder.ToString());
                 connection.Open();
                 MessageBox.Show("Database connection successfull", "Connection", MessageBoxButton.OK);
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message, "Connection", MessageBoxButton.OK);
+                switch (ex.Number)
+                {
+                    case 0:
+                        MessageBox.Show("Cannot connect to server.", "Connection", MessageBoxButton.OK, MessageBoxImage.Error);
+                        break;
+                    case 1045:
+                        MessageBox.Show("Invalid username or password, try again.", "Authorization", MessageBoxButton.OK, MessageBoxImage.Information);
+                        break;
+
+                }
             }
         }
 
@@ -54,9 +63,18 @@ namespace StaemDatabaseApp.Helper
                 connection.Close();
                 return true;
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                connection.Close();
+                switch (ex.Number)
+                {
+                    case 0:
+                        MessageBox.Show("Cannot connect to server.", "Connection", MessageBoxButton.OK, MessageBoxImage.Error);
+                        break;
+                    case 1045:
+                        MessageBox.Show("Invalid username or password, try again.", "Authorization", MessageBoxButton.OK, MessageBoxImage.Information);
+                        break;
+
+                }
                 return false;
             }
         }

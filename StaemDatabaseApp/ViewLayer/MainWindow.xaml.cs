@@ -24,7 +24,7 @@ namespace StaemDatabaseApp
         public MainWindow()
         {
             InitializeComponent();
-            DBHelper.EstablishConnection();
+            //DBHelper.EstablishConnection();
         }
     }
 }

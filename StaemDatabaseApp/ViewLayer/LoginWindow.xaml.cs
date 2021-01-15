@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StaemDatabaseApp.Helper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,8 +28,14 @@ namespace StaemDatabaseApp.ViewLayer
         private void loginButton_Click(object sender, RoutedEventArgs e)
         {
             Window mainWindow = new MainWindow();
-            mainWindow.Show();
-            Close();
+            String login = usernameTextBox.Text;
+            String password = passwordTextBox.Password;
+            if (DBHelper.ConnectToDatabase(login, password))
+            {
+                Close();
+                mainWindow.Show();
+                //Close();
+            }
         }
 
         private void exitButton_Click(object sender, RoutedEventArgs e)
