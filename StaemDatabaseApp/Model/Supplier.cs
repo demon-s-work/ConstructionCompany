@@ -10,10 +10,6 @@ namespace StaemDatabaseApp.Model
     {
         public Supplier(int id, string name, string address, string contact)
         {
-            //this.id = id;
-            //this.name = name;
-            //this.address = address;
-            //this.contact = contact;
             Id = id;
             Name = name;
             Address = address;
@@ -22,11 +18,9 @@ namespace StaemDatabaseApp.Model
 
         public Supplier(string id, string name, string address, string contact)
         {
-            //this.id = id;
-            //this.name = name;
-            //this.address = address;
-            //this.contact = contact;
-            Id = Int32.Parse(id);
+            int id_ = 0;
+            Int32.TryParse(id, out id_);
+            Id = id_;
             Name = name;
             Address = address;
             Contact = contact;
