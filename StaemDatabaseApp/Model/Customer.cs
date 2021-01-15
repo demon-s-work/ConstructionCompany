@@ -6,15 +6,27 @@ using System.Threading.Tasks;
 
 namespace StaemDatabaseApp.Model
 {
-    class Customer
+    public class Customer
     {
-        public Customer(int id, String name, String surname, float priceMultiplier, int gamesBought)
+
+        public Customer(string id, string name, string surname, string priceMultiplier, string gamesBought)
         {
-            //this.id = id;
-            //this.name = name;
-            //this.surname = surname;
-            //this.priceMultiplier = priceMultiplier;
-            //this.gamesBought = gamesBought;
+            int id_ = 0;
+            Int32.TryParse(id, out id_);
+            float priceMultiplier_ = 0.0f;
+            Single.TryParse(priceMultiplier, out priceMultiplier_);
+            int gamesBought_ = 0;
+            Int32.TryParse(gamesBought, out gamesBought_);
+
+            Id = id_;
+            Name = name;
+            Surname = surname;
+            PriceMultiplier = priceMultiplier_;
+            GamesBought = gamesBought_;
+        }
+
+        public Customer(int id, string name, string surname, float priceMultiplier, int gamesBought)
+        {
             Id = id;
             Name = name;
             Surname = surname;
@@ -23,8 +35,8 @@ namespace StaemDatabaseApp.Model
         }
 
         private int id;
-        private String name;
-        private String surname;
+        private string name;
+        private string surname;
         private float priceMultiplier;
         private int gamesBought;
 

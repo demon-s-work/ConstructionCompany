@@ -79,5 +79,26 @@ namespace StaemDatabaseApp.Helper
             }
         }
 
+        public static MySqlCommand RunQuery(string query)
+        {
+            try
+            {
+                Console.WriteLine(connection != null);
+                if (connection != null)
+                {
+                    connection.Open();
+                    cmd = connection.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+            }
+            return cmd;
+        }
     }
 }

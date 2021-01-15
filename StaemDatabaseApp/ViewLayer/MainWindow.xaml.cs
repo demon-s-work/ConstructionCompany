@@ -1,4 +1,5 @@
-﻿using StaemDatabaseApp.Helper;
+﻿using StaemDatabaseApp.DBLayer;
+using StaemDatabaseApp.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,13 @@ namespace StaemDatabaseApp
         public MainWindow()
         {
             InitializeComponent();
-            //DBHelper.EstablishConnection();
+
+            var data = CustomersDB.RetrieveAllCustomers();
+            Console.WriteLine("XDD");
+            foreach(var d in data)
+            {
+                Console.WriteLine(d);
+            }
         }
     }
 }
