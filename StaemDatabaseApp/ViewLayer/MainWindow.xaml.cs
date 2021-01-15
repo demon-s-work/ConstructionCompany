@@ -30,7 +30,7 @@ namespace StaemDatabaseApp
             Console.WriteLine("XDD");
             foreach(var d in data)
             {
-                Console.WriteLine(d);
+                Console.WriteLine(d.Name);
             }
         }
     }
