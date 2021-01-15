@@ -8,6 +8,17 @@ namespace StaemDatabaseApp.Model
 {
     class Game
     {
+        public Game(int id, String name, String description, int quantity, float price, Status status, Developer developer)
+        {
+            this.id = id;
+            this.name = name;
+            this.description = description;
+            this.quantity = quantity;
+            this.price = price;
+            this.status = status;
+            this.developer = developer;
+        }
+
         private int id;
         private String name;
         private String description;

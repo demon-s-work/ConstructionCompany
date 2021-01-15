@@ -8,6 +8,14 @@ namespace StaemDatabaseApp.Model
 {
     class Reservation
     {
+        public Reservation(int id, DateTime date, Customer customer, Game game)
+        {
+            this.id = id;
+            this.date = date;
+            this.customer = customer;
+            this.game = game;
+        }
+
         private int id;
         private DateTime date;
         private Customer customer;

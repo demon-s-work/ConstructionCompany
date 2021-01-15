@@ -8,6 +8,14 @@ namespace StaemDatabaseApp.Model
 {
     class Status
     {
+        public Status(int id, String name, String description, float priceMultiplier)
+        {
+            this.id = id;
+            this.name = name;
+            this.description = description;
+            this.priceMultiplier = priceMultiplier;
+        }
+
         private int id;
         private String name;
         private String description;

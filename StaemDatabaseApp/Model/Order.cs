@@ -8,6 +8,14 @@ namespace StaemDatabaseApp.Model
 {
     class Order
     {
+        public Order(int id, int quantity, Game game, Supplier supplier)
+        {
+            this.id = id;
+            this.quantity = quantity;
+            this.game = game;
+            this.supplier = supplier;
+        }
+
         private int id;
         private int quantity;
         private Game game;

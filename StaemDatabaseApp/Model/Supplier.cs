@@ -8,6 +8,13 @@ namespace StaemDatabaseApp.Model
 {
     class Supplier
     {
+        public Supplier(int id, String name, String address, String contact)
+        {
+            this.id = id;
+            this.name = name;
+            this.address = address;
+            this.contact = contact;
+        }
         private int id;
         private String name;
         private String address;
