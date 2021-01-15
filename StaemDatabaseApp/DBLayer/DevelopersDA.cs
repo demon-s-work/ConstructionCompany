@@ -36,5 +36,26 @@ namespace StaemDatabaseApp.DBLayer
             }
             return allDevelopers;
         }
+
+        public static Developer RetrieveDeveloperByID(int developerID)
+        {
+            string query = "SELECT * FROM staem.developers WHERE ID = (@ID) limit 1;";
+            cmd = DBHelper.RunQuery(query, developerID);
+            Developer developer = null;
+            if (cmd != null)
+            {
+                dt = new DataTable();
+                sda = new MySqlDataAdapter(cmd);
+                sda.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    string id = dr["ID"].ToString();
+                    string name = dr["Developer_name"].ToString();
+                    string contact = dr["Developer_contact"].ToString();
+                    developer = new Developer(id, name, contact);
+                }
+            }
+            return developer;
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StaemDatabaseApp.Model
 {
-    class Status
+    public class Status
     {
         public Status(int id, string name, string description, float priceMultiplier)
         {
@@ -14,6 +14,18 @@ namespace StaemDatabaseApp.Model
             Name = name;
             Description = description;
             PriceMultiplier = priceMultiplier;
+        }
+
+        public Status(string id, string name, string description, string priceMultiplier)
+        {
+            int id_;
+            Int32.TryParse(id, out id_);
+            Id = id_;
+            Name = name;
+            Description = description;
+            float priceMultiplier_;
+            Single.TryParse(priceMultiplier, out priceMultiplier_);
+            PriceMultiplier = priceMultiplier_;
         }
 
         private int id;

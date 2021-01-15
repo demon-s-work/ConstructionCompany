@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StaemDatabaseApp.DBLayer
 {
-    class OrderDA
+    public static class OrderDA
     {
     }
 }
