@@ -26,7 +26,7 @@ namespace StaemDatabaseApp
         {
             InitializeComponent();
 
-            var data = CustomersDB.RetrieveAllCustomers();
+            var data = CustomersDA.RetrieveAllCustomers();
             foreach(var d in data)
             {
                 Console.WriteLine(d.Name);
