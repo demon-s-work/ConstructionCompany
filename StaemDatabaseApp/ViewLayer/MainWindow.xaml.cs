@@ -31,5 +31,10 @@ namespace StaemDatabaseApp
         {
             customersDataGrid.ItemsSource = CustomersDA.RetrieveAllCustomers();
         }
+
+        private void showSuppliersButton_Click(object sender, RoutedEventArgs e)
+        {
+            suppliersDataGrid.ItemsSource = SuppliersDA.retrieveAllSuppliers();
+        }
     }
 }

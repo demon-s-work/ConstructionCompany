@@ -147,14 +147,16 @@
             <TabItem Header="Suppliers">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="145*" />
-                        <ColumnDefinition Width="649*" />
+                        <ColumnDefinition Width="144*" />
+                        <ColumnDefinition Width="191*" />
+                        <ColumnDefinition Width="59*"/>
+                        <ColumnDefinition Width="394*"/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Margin="10">
                         <Button x:Name="showSuppliersButton"
                                 Content="Show Suppliers"
                                 Margin="5"
-                                VerticalAlignment="Center" />
+                                VerticalAlignment="Center" Click="showSuppliersButton_Click" />
                         <Button x:Name="button2"
                                 Content="..."
                                 Margin="5"
@@ -163,7 +165,7 @@
                     <DataGrid x:Name="suppliersDataGrid"
                               Grid.Column="1"
                               Margin="5"
-                              Grid.ColumnSpan="2" />
+                              Grid.ColumnSpan="3" />
                 </Grid>
             </TabItem>
         </TabControl>
