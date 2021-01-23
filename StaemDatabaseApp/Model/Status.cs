@@ -37,5 +37,10 @@ namespace StaemDatabaseApp.Model
         public string Name { get => name; set => name = value; }
         public string Description { get => description; set => description = value; }
         public float PriceMultiplier { get => priceMultiplier; set => priceMultiplier = value; }
+
+        public override string ToString()
+        {
+            return Name + " : " + Id.ToString();
+        }
     }
 }

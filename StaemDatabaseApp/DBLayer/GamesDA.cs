@@ -64,5 +64,21 @@ namespace StaemDatabaseApp.DBLayer
             }
             return game;
         }
+
+        public static bool AddGame(String name, String description, string quantity, string price, string statusID, string developerID)
+        {
+            string query = "INSERT INTO staem.Games (`Game_name`, `Game_description`, `Game_quantity`, `Game_price`, `Status_id`, `Developer_id`)" +
+                "VALUES ('" + name + "', '" + description + "', " + quantity + ", " + price + ", " + statusID + ", " + developerID + ");";
+            cmd = DBHelper.RunQueryNoParameters(query);
+            return cmd != null;
+        }
+
+        public static bool RemoveGame(int id)
+        {
+            string query = "DELETE FROM staem.Games WHERE ID = (@ID)";
+            cmd = DBHelper.RunQueryWithID(query, id);
+            return cmd != null;
+        }
+
     }
 }

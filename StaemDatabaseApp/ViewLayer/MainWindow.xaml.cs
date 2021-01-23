@@ -111,5 +111,55 @@ namespace StaemDatabaseApp
                 }
             }
         }
+
+        private void addGameButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window addGameWindow = new AddGameWindow();
+            addGameWindow.Owner = this;
+            addGameWindow.ShowDialog();
+            gamesDataGrid.Items.Refresh();
+        }
+
+        private void removeGameButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Get selected index from grid
+
+            Game game = (Game)gamesDataGrid.SelectedItem;
+
+            if (game == null)
+            { // Typ wiadomosci i ikonka?
+                MessageBox.Show("Select customer first.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
+            // Creating game info
+            StringBuilder sb = new StringBuilder();
+            sb.Append("This action will delete following customer from database!\n");
+            sb.Append("ID: " + game.Id + "\n");
+            sb.Append("Name: " + game.Name + "\n");
+            sb.Append("Developer: " + game.Developer.Name + "\n");
+            sb.Append("Description: " + game.Description + "\n");
+            sb.Append("Quantity: " + game.Quantity + "\n");
+            sb.Append("Price: " + game.Price + "\n");
+            sb.Append("Status: " + game.Status.Name + "\n");
+            sb.Append("\nThis action may not be reversable. Do you want to continue?");
+
+            // Ask if correct game is selected
+            MessageBoxResult result = MessageBox.Show(sb.ToString(), "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                bool deleted = GamesDA.RemoveGame(game.Id);
+                if (deleted)
+                {
+                    MessageBox.Show("Game was removed successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    //customersDataGrid.Items.Remove(customersDataGrid.SelectedItem);
+                }
+                else
+                {
+                    MessageBox.Show("An error occuried during this action.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
     }
 }

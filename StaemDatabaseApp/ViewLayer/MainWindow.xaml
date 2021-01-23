@@ -75,11 +75,11 @@
                         <Button x:Name="addGameButton"
                                 Content="Add Game"
                                 Margin="5"
-                                VerticalAlignment="Center" />
+                                VerticalAlignment="Center" Click="addGameButton_Click" />
                         <Button x:Name="removeGameButton"
                                 Content="Remove Game"
                                 Margin="5"
-                                VerticalAlignment="Center" />
+                                VerticalAlignment="Center" Click="removeGameButton_Click" />
                         <Button x:Name="modifyGameButton"
                                 Content="Modify Game"
                                 Margin="5"
