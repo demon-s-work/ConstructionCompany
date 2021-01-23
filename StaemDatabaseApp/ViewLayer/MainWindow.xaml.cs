@@ -59,7 +59,7 @@ namespace StaemDatabaseApp
 
         private void showSuppliersButton_Click(object sender, RoutedEventArgs e)
         {
-            suppliersDataGrid.ItemsSource = SuppliersDA.retrieveAllSuppliers();
+            suppliersDataGrid.ItemsSource = SuppliersDA.RetrieveAllSuppliers();
         }
     }
 }

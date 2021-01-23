@@ -30,7 +30,7 @@ namespace StaemDatabaseApp.Model
             Game = GamesDA.RetrieveGameByID(gameID_);
             int supplierID_;
             Int32.TryParse(supplierID, out supplierID_);
-            Supplier = SuppliersDA.retrieveSupplierByID(supplierID_);
+            Supplier = SuppliersDA.RetrieveSupplierByID(supplierID_);
         }
 
         private int id;

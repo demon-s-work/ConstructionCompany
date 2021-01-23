@@ -16,7 +16,7 @@ namespace StaemDatabaseApp.DBLayer
         private static DataTable dt;
         private static MySqlDataAdapter sda;
 
-        public static Supplier retrieveSupplierByName(string supplierName)
+        public static Supplier RetrieveSupplierByName(string supplierName)
         {
             string query = "SELECT * FROM staem.suppliers where Supplier_name = (@supplierName) limit 1";
             //cmd = DBHelper.RunQuery(query, supplierName);
@@ -38,7 +38,7 @@ namespace StaemDatabaseApp.DBLayer
             return supplier;
         }
 
-        public static Supplier retrieveSupplierByID(int supplierID)
+        public static Supplier RetrieveSupplierByID(int supplierID)
         {
             string query = "SELECT * FROM staem.suppliers WHERE ID = (@ID) limit 1";
             cmd = DBHelper.RunQuery(query, supplierID);
@@ -60,7 +60,7 @@ namespace StaemDatabaseApp.DBLayer
             return supplier;
         }
 
-        public static List<Supplier> retrieveAllSuppliers()
+        public static List<Supplier> RetrieveAllSuppliers()
         {
             string query = "SELECT * FROM staem.suppliers";
             cmd = DBHelper.RunQueryNoParameters(query);

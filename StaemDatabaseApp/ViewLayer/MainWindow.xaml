@@ -24,8 +24,8 @@
                                 Margin="5"
                                 VerticalAlignment="Center"
                                 Click="showCustomersButton_Click" />
-                        <Button x:Name="button1"
-                                Content="..."
+                        <Button x:Name="addCustomerButton"
+                                Content="Add Customer"
                                 Margin="5"
                                 VerticalAlignment="Center" />
                     </StackPanel>
@@ -68,8 +68,20 @@
                                 Margin="5"
                                 VerticalAlignment="Center"
                                 Click="showGamesButton_Click" />
-                        <Button x:Name="button4"
-                                Content="..."
+                        <Button x:Name="addGameButton"
+                                Content="Add Game"
+                                Margin="5"
+                                VerticalAlignment="Center" />
+                        <Button x:Name="removeGameButton"
+                                Content="Remove Game"
+                                Margin="5"
+                                VerticalAlignment="Center" />
+                        <Button x:Name="modifyGameButton"
+                                Content="Modify Game"
+                                Margin="5"
+                                VerticalAlignment="Center" />
+                        <Button x:Name="sellGameButton"
+                                Content="Sell Game"
                                 Margin="5"
                                 VerticalAlignment="Center" />
                     </StackPanel>
@@ -90,8 +102,8 @@
                                 Margin="5"
                                 VerticalAlignment="Center"
                                 Click="showOrdersButton_Click" />
-                        <Button x:Name="button5"
-                                Content="..."
+                        <Button x:Name="addNewOrderButton"
+                                Content="Add New Order"
                                 Margin="5"
                                 VerticalAlignment="Center" />
                     </StackPanel>
@@ -112,8 +124,8 @@
                                 Margin="5"
                                 VerticalAlignment="Center"
                                 Click="showReservationsButton_Click" />
-                        <Button x:Name="button6"
-                                Content="..."
+                        <Button x:Name="addReservation"
+                                Content="Add Reservation"
                                 Margin="5"
                                 VerticalAlignment="Center" />
                     </StackPanel>
