@@ -128,7 +128,7 @@ namespace StaemDatabaseApp
 
             if (game == null)
             { // Typ wiadomosci i ikonka?
-                MessageBox.Show("Select customer first.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Select game first.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
 
@@ -160,6 +160,24 @@ namespace StaemDatabaseApp
                     MessageBox.Show("An error occuried during this action.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
+        }
+
+        private void modifyGameButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Get selected index from grid
+
+            Game game = (Game)gamesDataGrid.SelectedItem;
+
+            if (game == null)
+            { // Typ wiadomosci i ikonka?
+                MessageBox.Show("Select game first.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
+            Window editGameWindow = new EditGameWindow(game);
+            editGameWindow.Owner = this;
+            editGameWindow.ShowDialog();
+            gamesDataGrid.Items.Refresh();
         }
     }
 }
