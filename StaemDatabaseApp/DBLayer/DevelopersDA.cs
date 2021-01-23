@@ -16,7 +16,7 @@ namespace StaemDatabaseApp.DBLayer
         private static DataTable dt;
         private static MySqlDataAdapter sda;
 
-        public static List<Developer> RetriveAllDevelopers()
+        public static List<Developer> RetrieveAllDevelopers()
         {
             string query = "SELECT * FROM staem.developers;";
             cmd = DBHelper.RunQueryNoParameters(query);

@@ -149,6 +149,31 @@ namespace StaemDatabaseApp.Helper
             return cmd;
         }
 
+        public static MySqlCommand RunQueryWithParamList(string query, Dictionary<string, string> paramValuePair)
+        {
+            try
+            {
+                if (connection != null)
+                {
+                    connection.Open();
+                    cmd = connection.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    foreach(var pvp in paramValuePair)
+                    {
+                        cmd.Parameters.AddWithValue(pvp.Key, pvp.Value);
+                    }
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+            }
+            return cmd;
+        }
+
         public static MySqlCommand RunQueryToUpdateGame(string query, string  name, string description, int quantity, double price, int status, int developer, int ID)
         {
             try
