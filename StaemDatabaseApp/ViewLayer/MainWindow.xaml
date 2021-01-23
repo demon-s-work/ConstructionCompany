@@ -129,8 +129,7 @@
                                 Margin="5"
                                 VerticalAlignment="Center" />
                     </StackPanel>
-                    <DataGrid x:Name="ordersDataGrid1"
-                              Grid.Column="1"
+                    <DataGrid Grid.Column="1"
                               Margin="5" />
                 </Grid>
             </TabItem>

@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="StaemDatabaseApp.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="3.5" Y="4.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>EABAAAAAAAAAAAAAAAAAAAAAAACAIBQAAAgAAAAAAAA=</HashCode>
+      <FileName>ViewLayer\MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="StaemDatabaseApp.DBLayer.CustomersDA" Collapsed="true">
+    <Position X="12.5" Y="1" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAQAAAAAAAAAAAAAAAAAAAUAAAAAAAg=</HashCode>
+      <FileName>DBLayer\CustomersDA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaemDatabaseApp.DBLayer.DevelopersDA" Collapsed="true">
+    <Position X="12.5" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQQAgAAAAg=</HashCode>
+      <FileName>DBLayer\DevelopersDA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaemDatabaseApp.DBLayer.GamesDA" Collapsed="true">
+    <Position X="12.5" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAQAAAAAAAAAAAAAEAAAAAQAAAAAAAg=</HashCode>
+      <FileName>DBLayer\GamesDA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaemDatabaseApp.DBLayer.OrderDA" Collapsed="true">
+    <Position X="12.5" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQAAABAAAg=</HashCode>
+      <FileName>DBLayer\OrderDA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaemDatabaseApp.DBLayer.ReservationsDA" Collapsed="true">
+    <Position X="12.5" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAQAAAAAAAAIAAAAAAAAAAQAAAAAAAg=</HashCode>
+      <FileName>DBLayer\ReservationsDA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaemDatabaseApp.DBLayer.StatusDA" Collapsed="true">
+    <Position X="12.5" Y="4.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAQABAAAAAAAAAAAAAAAAAQAAAAAAAg=</HashCode>
+      <FileName>DBLayer\StatusDA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaemDatabaseApp.DBLayer.SuppliersDA" Collapsed="true">
+    <Position X="12.5" Y="5.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAYAAAAQAAAAAAAAAAAAAAAAAAAQAAAAAAAg=</HashCode>
+      <FileName>DBLayer\SuppliersDA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaemDatabaseApp.Helper.DBHelper">
+    <Position X="3" Y="0.75" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>IAAIAAAAAAAAAAQAAAABAAAAAQAAAAAAAAQAAAEAAAg=</HashCode>
+      <FileName>Helper\DBHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaemDatabaseApp.Model.Customer" Collapsed="true">
+    <Position X="8.25" Y="1" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACBAAAAAAAAAQAAAAEAAQABAAEAAAAAAAAAAAAAgQ=</HashCode>
+      <FileName>Model\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaemDatabaseApp.Model.Developer" Collapsed="true">
+    <Position X="8.25" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAACAAAAAwAAAAEAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Model\Developer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaemDatabaseApp.Model.Game" Collapsed="true">
+    <Position X="8.25" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQDAAAEAQAgAAAAIAAAAAQAAIAEAACAAAAAgAAAAgA=</HashCode>
+      <FileName>Model\Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaemDatabaseApp.Model.Order" Collapsed="true">
+    <Position X="8.25" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAIAAAACAAAAAAAgAAACIAAAAgAAAAgA=</HashCode>
+      <FileName>Model\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaemDatabaseApp.Model.Reservation" Collapsed="true">
+    <Position X="8.25" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAECAAABAAAAAAAAAAAAAAAAAAgAAAAJAAAAAQAAAgA=</HashCode>
+      <FileName>Model\Reservation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaemDatabaseApp.Model.Status" Collapsed="true">
+    <Position X="8.25" Y="4.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACBAAAAAAgAAAAIAAAAAQAAAAEAAAAAAAAAAAAAgQ=</HashCode>
+      <FileName>Model\Status.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaemDatabaseApp.Model.Supplier">
+    <Position X="8.25" Y="5.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAACAAAAAwAAAIEAAACAAAAAAAAAgA=</HashCode>
+      <FileName>Model\Supplier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaemDatabaseApp.ViewLayer.LoginWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>ViewLayer\LoginWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
