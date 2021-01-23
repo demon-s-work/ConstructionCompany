@@ -99,7 +99,7 @@ namespace StaemDatabaseApp
 
             if (result == MessageBoxResult.Yes)
             {
-                bool deleted = CustomersDA.removeCustomer(customer.Id);
+                bool deleted = CustomersDA.RemoveCustomer(customer.Id);
                 if (deleted)
                 {
                     MessageBox.Show("Customer was removed successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
