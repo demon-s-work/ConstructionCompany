@@ -25,11 +25,6 @@ namespace StaemDatabaseApp.ViewLayer
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
             // Verify customer data

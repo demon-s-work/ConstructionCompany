@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StaemDatabaseApp.ViewLayer"
         mc:Ignorable="d"
-        Title="Dodaj klienta" Height="293" Width="360.0">
+        Title="Add customer"
+        Height="293" Width="360.0">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="567,156,-216.6,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <Label Content="New client data" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="35" Margin="10,10,0,0" VerticalAlignment="Top" Width="334" FontSize="18" FontWeight="SemiBold" TextOptions.TextFormattingMode="Display"/>
+        <Label Content="New customer data"
+               HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="35" Margin="10,10,0,0" VerticalAlignment="Top" Width="334" FontSize="18" FontWeight="SemiBold" TextOptions.TextFormattingMode="Display"/>
         <Grid HorizontalAlignment="Left" Height="140" Margin="30,50,0,0" VerticalAlignment="Top" Width="294">
-            <TextBox x:Name="customerNameTextBox" HorizontalAlignment="Left" Height="20" Margin="116,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" TextChanged="TextBox_TextChanged"/>
+            <TextBox x:Name="customerNameTextBox" HorizontalAlignment="Left" Height="20" Margin="116,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" />
             <Label Content="Surname:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="24" Margin="11,39,0,0" VerticalAlignment="Top" Width="100"/>
             <TextBox x:Name="customerSurnameTextBox" HorizontalAlignment="Left" Height="20" Margin="116,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
             <Label Content="Name:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="24" Margin="11,14,0,0" VerticalAlignment="Top" Width="100"/>
