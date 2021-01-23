@@ -77,7 +77,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="ViewLayer\AddCustomer.xaml">
+    <Page Include="ViewLayer\AddCustomerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,8 +108,8 @@
     <Compile Include="Model\Reservation.cs" />
     <Compile Include="Model\Status.cs" />
     <Compile Include="Model\Supplier.cs" />
-    <Compile Include="ViewLayer\AddCustomer.xaml.cs">
-      <DependentUpon>AddCustomer.xaml</DependentUpon>
+    <Compile Include="ViewLayer\AddCustomerWindow.xaml.cs">
+      <DependentUpon>AddCustomerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewLayer\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>

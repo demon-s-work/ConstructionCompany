@@ -1,5 +1,6 @@
 ﻿using StaemDatabaseApp.DBLayer;
 using StaemDatabaseApp.Helper;
+using StaemDatabaseApp.ViewLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,7 +65,9 @@ namespace StaemDatabaseApp
 
         private void addCustomerButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Window addCustomerWindow = new AddCustomerWindow();
+            
+            addCustomerWindow.ShowDialog();
         }
     }
 }

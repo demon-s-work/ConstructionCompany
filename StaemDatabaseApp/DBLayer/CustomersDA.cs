@@ -62,5 +62,15 @@ namespace StaemDatabaseApp.DBLayer
             return customer;
         }
 
+        public static bool addCustomer(String name, String surname, string priceMultiplier, string gamesBought)
+        {
+            // INSERT INTO `staem`.`Customers` (`ID`, `Customer_name`, `Customer_surname`, `Customer_price_multiplier`, `Customer_games_bought`) 
+            // VALUES (1, 'Zniżka', 'Pracownik', 0.9, 0);
+            string query = "INSERT INTO `staem`.`Customers` (`Customer_name`, `Customer_surname`, `Customer_price_multiplier`, `Customer_games_bought`)" +
+                "VALUES ('" + name + "', '" + surname + "', " + priceMultiplier + ", " + gamesBought + ");";
+            cmd = DBHelper.RunQueryNoParameters(query);
+            return cmd != null;
+        }
+
     }
 }
