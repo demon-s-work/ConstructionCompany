@@ -53,6 +53,7 @@ namespace StaemDatabaseApp.ViewLayer
             try
             {
                 quantity = Int32.Parse(quantityTextBox.Text);
+                priceTextBox.Text = priceTextBox.Text.Replace(',', '.');
                 price = Double.Parse(priceTextBox.Text, CultureInfo.InvariantCulture);
             }
             catch (Exception ex)
@@ -76,12 +77,10 @@ namespace StaemDatabaseApp.ViewLayer
 
             //Retrieve status and developer ID
             Status status = (Status)statusComboBox.SelectedItem;
-            string statusID = status.Id.ToString();
             Developer developer = (Developer)developerComboBox.SelectedItem;
-            string developerID = developer.Id.ToString();
 
 
-            bool answer = GamesDA.AddGame(nameTextBox.Text, descriptionTextBox.Text, quantityTextBox.Text, priceTextBox.Text, statusID, developerID);
+            bool answer = GamesDA.AddGame(nameTextBox.Text, descriptionTextBox.Text, quantity, price, status.Id, developer.Id);
             if (answer)
             {
                 MessageBox.Show("Game was added successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);

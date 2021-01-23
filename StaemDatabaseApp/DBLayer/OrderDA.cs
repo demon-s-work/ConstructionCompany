@@ -43,7 +43,7 @@ namespace StaemDatabaseApp.DBLayer
             Dictionary<string, string> parameters = new Dictionary<string, string>();
             parameters.Add("@Quantity", quantity.ToString());
             parameters.Add("@GameID", gameID.ToString());
-            parameters.Add("@Supplier", supplierID.ToString());
+            parameters.Add("@SupplierID", supplierID.ToString());
             cmd = DBHelper.RunQueryWithParamList(query, parameters);
             return cmd != null;
         }

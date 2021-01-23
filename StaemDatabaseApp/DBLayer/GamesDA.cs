@@ -4,6 +4,7 @@ using StaemDatabaseApp.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,17 +66,17 @@ namespace StaemDatabaseApp.DBLayer
             return game;
         }
 
-        public static bool AddGame(String name, String description, string quantity, string price, string statusID, string developerID)
+        public static bool AddGame(string name, string description, int quantity, double price, int status, int developer)
         {
             string query = "INSERT INTO staem.Games (Game_name, Game_description, Game_quantity, Game_price, Status_id, Developer_id)" +
-                " VALUES ('@name', '@description', @quantity, @price, @statusID, @developerID);";
+                " VALUES (@Game_name, @Game_description, @Game_quantity, @Game_price, @statusID, @developerID);";
             Dictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("@name", name);
-            parameters.Add("@description", description);
-            parameters.Add("@quantity", quantity.ToString());
-            parameters.Add("@price", price.ToString());
-            parameters.Add("@statusID", statusID.ToString());
-            parameters.Add("@developerID", developerID.ToString());
+            parameters.Add("@Game_name", name);
+            parameters.Add("@Game_description", description);
+            parameters.Add("@Game_quantity", quantity.ToString());
+            parameters.Add("@Game_price", price.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture));
+            parameters.Add("@statusID", status.ToString());
+            parameters.Add("@developerID", developer.ToString());
             cmd = DBHelper.RunQueryWithParamList(query, parameters);
             return cmd != null;
         }
@@ -95,7 +96,7 @@ namespace StaemDatabaseApp.DBLayer
             parameters.Add("@Game_name", name);
             parameters.Add("@Game_description", description);
             parameters.Add("@Game_quantity", quantity.ToString());
-            parameters.Add("@Game_price", price.ToString());
+            parameters.Add("@Game_price", price.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture));
             parameters.Add("@Status_id", status.ToString());
             parameters.Add("@Developer_id", developer.ToString());
             parameters.Add("@ID", ID.ToString());

@@ -101,6 +101,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ViewLayer\AddReservationWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="ViewLayer\AddOrderWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -142,6 +146,9 @@
     <Compile Include="Model\Supplier.cs" />
     <Compile Include="ViewLayer\AddCustomerWindow.xaml.cs">
       <DependentUpon>AddCustomerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLayer\AddReservationWindow.xaml.cs">
+      <DependentUpon>AddReservationWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewLayer\AddOrderWindow.xaml.cs">
       <DependentUpon>AddOrderWindow.xaml</DependentUpon>
