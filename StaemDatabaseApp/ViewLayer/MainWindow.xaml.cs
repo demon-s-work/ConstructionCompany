@@ -39,12 +39,12 @@ namespace StaemDatabaseApp
 
         private void showGamesButton_Click(object sender, RoutedEventArgs e)
         {
-            //gamesDataGrid.ItemsSource = GamesDA.RetrieveAllGames();
+            gamesDataGrid.ItemsSource = GamesDA.RetrieveAllGames();
         }
 
         private void showOrdersButton_Click(object sender, RoutedEventArgs e)
         {
-            //ordersDataGrid.ItemsSource = OrdersDA.RetrieveAllOrders();
+            //ordersDataGrid.ItemsSource = OrderDA.RetrieveAllOrders();
         }
 
         private void showReservationsButton_Click(object sender, RoutedEventArgs e)
