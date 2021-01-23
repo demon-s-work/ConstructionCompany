@@ -49,12 +49,12 @@ namespace StaemDatabaseApp
 
         private void showReservationsButton_Click(object sender, RoutedEventArgs e)
         {
-            //reservationsDataGrid.ItemsSource = ReservationsDA.RetrieveAllOrders();
+            reservationsDataGrid.ItemsSource = ReservationsDA.RetrieveAllReservations();
         }
 
         private void showStatusesButton_Click(object sender, RoutedEventArgs e)
         {
-            //statusesDataGrid.ItemsSource = StatusesDA.RetrieveAllStatuses();
+            statusesDataGrid.ItemsSource = StatusDA.RetrieveAllStatuses();
         }
 
         private void showSuppliersButton_Click(object sender, RoutedEventArgs e)

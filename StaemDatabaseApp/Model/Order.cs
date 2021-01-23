@@ -31,15 +31,24 @@ namespace StaemDatabaseApp.Model
             int supplierID_;
             Int32.TryParse(supplierID, out supplierID_);
             Supplier = SuppliersDA.RetrieveSupplierByID(supplierID_);
+            // ID
+            GameID = gameID_;
+            SupplierID = supplierID_;
+
         }
 
         private int id;
         private int quantity;
+        private int gameID;
+        private int supplierID;
         private Game game;
         private Supplier supplier;
 
         public int Id { get => id; set => id = value; }
         public int Quantity { get => quantity; set => quantity = value; }
+        public int GameID { get => gameID; set => gameID = value; }
+        public int SupplierID { get => supplierID; set => supplierID = value; }
+
         internal Game Game { get => game; set => game = value; }
         internal Supplier Supplier { get => supplier; set => supplier = value; }
     }
