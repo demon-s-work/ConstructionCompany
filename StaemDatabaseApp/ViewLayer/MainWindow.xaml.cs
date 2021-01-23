@@ -1,5 +1,6 @@
 ﻿using StaemDatabaseApp.DBLayer;
 using StaemDatabaseApp.Helper;
+using StaemDatabaseApp.Model;
 using StaemDatabaseApp.ViewLayer;
 using System;
 using System.Collections.Generic;
@@ -66,8 +67,48 @@ namespace StaemDatabaseApp
         private void addCustomerButton_Click(object sender, RoutedEventArgs e)
         {
             Window addCustomerWindow = new AddCustomerWindow();
-            
             addCustomerWindow.ShowDialog();
+            customersDataGrid.Items.Refresh();
+        }
+
+        private void removeCustomerButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Get selected index from grid
+
+            Customer customer = (Customer)customersDataGrid.SelectedItem;
+
+            if(customer == null)
+            { // Typ wiadomosci i ikonka?
+                MessageBox.Show("Select customer first.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
+            // Creating customer info
+            StringBuilder sb = new StringBuilder();
+            sb.Append("This action will delete following customer from database!\n");
+            sb.Append("ID: " + customer.Id + "\n");
+            sb.Append("Name: " + customer.Name +"\n");
+            sb.Append("Surname: " + customer.Surname + "\n");
+            sb.Append("Price Multiplier: " + customer.PriceMultiplier + "\n");
+            sb.Append("Games bought: " + customer.GamesBought + "\n");
+            sb.Append("\nThis action may not be reversable. Do you want to continue?");
+
+            // Ask if correct customer is selected
+            MessageBoxResult result = MessageBox.Show(sb.ToString(), "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                bool deleted = CustomersDA.removeCustomer(customer.Id);
+                if (deleted)
+                {
+                    MessageBox.Show("Customer was removed successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    //customersDataGrid.Items.Remove(customersDataGrid.SelectedItem);
+                }
+                else
+                {
+                    MessageBox.Show("An error occuried during this action.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
     }
 }

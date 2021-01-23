@@ -72,5 +72,11 @@ namespace StaemDatabaseApp.DBLayer
             return cmd != null;
         }
 
+        public static bool removeCustomer(int id)
+        {
+            string query = "DELETE FROM staem.Customers WHERE ID = (@ID)";
+            cmd = DBHelper.RunQueryWithID(query, id);
+            return cmd != null;
+        }
     }
 }

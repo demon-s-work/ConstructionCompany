@@ -28,6 +28,10 @@
                                 Content="Add Customer"
                                 Margin="5"
                                 VerticalAlignment="Center" Click="addCustomerButton_Click" />
+                        <Button x:Name="removeCustomerButton"
+                            Content="Remove Customer"
+                            Margin="5"
+                            VerticalAlignment="Center" Click="removeCustomerButton_Click" />
                     </StackPanel>
                     <DataGrid x:Name="customersDataGrid"
                               Grid.Column="1"
