@@ -109,7 +109,7 @@
                         <Button x:Name="addNewOrderButton"
                                 Content="Add New Order"
                                 Margin="5"
-                                VerticalAlignment="Center" />
+                                VerticalAlignment="Center" Click="addNewOrderButton_Click" />
                     </StackPanel>
                     <DataGrid x:Name="ordersDataGrid"
                               Grid.Column="1"

@@ -45,7 +45,7 @@ namespace StaemDatabaseApp.ViewLayer
                 }
             }
 
-            developerComboBox.ItemsSource = DevelopersDA.RetriveAllDevelopers();
+            developerComboBox.ItemsSource = DevelopersDA.RetrieveAllDevelopers();
             for (int i = 0; i < developerComboBox.Items.Count; i++)
             {
                 if (((Developer)developerComboBox.Items.GetItemAt(i)).Id == game.Developer.Id)

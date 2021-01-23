@@ -56,5 +56,10 @@ namespace StaemDatabaseApp.Model
         public float Price { get => price; set => price = value; }
         internal Status Status { get => status; set => status = value; }
         internal Developer Developer { get => developer; set => developer = value; }
+
+        public override string ToString()
+        {
+            return Name +" "+Price + " : " + Id.ToString();
+        }
     }
 }

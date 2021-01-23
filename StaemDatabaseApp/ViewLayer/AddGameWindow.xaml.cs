@@ -2,6 +2,7 @@
 using StaemDatabaseApp.Model;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,7 @@ namespace StaemDatabaseApp.ViewLayer
             statusComboBox.ItemsSource = StatusDA.RetrieveAllStatuses();
             statusComboBox.SelectedIndex = 0;
 
-            developerComboBox.ItemsSource = DevelopersDA.RetriveAllDevelopers();
+            developerComboBox.ItemsSource = DevelopersDA.RetrieveAllDevelopers();
             developerComboBox.SelectedIndex = 0;
         }
 
@@ -52,7 +53,7 @@ namespace StaemDatabaseApp.ViewLayer
             try
             {
                 quantity = Int32.Parse(quantityTextBox.Text);
-                price = Double.Parse(priceTextBox.Text);
+                price = Double.Parse(priceTextBox.Text, CultureInfo.InvariantCulture);
             }
             catch (Exception ex)
             {

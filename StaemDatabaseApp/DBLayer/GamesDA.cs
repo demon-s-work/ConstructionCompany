@@ -67,9 +67,16 @@ namespace StaemDatabaseApp.DBLayer
 
         public static bool AddGame(String name, String description, string quantity, string price, string statusID, string developerID)
         {
-            string query = "INSERT INTO staem.Games (`Game_name`, `Game_description`, `Game_quantity`, `Game_price`, `Status_id`, `Developer_id`)" +
-                "VALUES ('" + name + "', '" + description + "', " + quantity + ", " + price + ", " + statusID + ", " + developerID + ");";
-            cmd = DBHelper.RunQueryNoParameters(query);
+            string query = "INSERT INTO staem.Games (Game_name, Game_description, Game_quantity, Game_price, Status_id, Developer_id)" +
+                " VALUES ('@name', '@description', @quantity, @price, @statusID, @developerID);";
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters.Add("@name", name);
+            parameters.Add("@description", description);
+            parameters.Add("@quantity", quantity.ToString());
+            parameters.Add("@price", price.ToString());
+            parameters.Add("@statusID", statusID.ToString());
+            parameters.Add("@developerID", developerID.ToString());
+            cmd = DBHelper.RunQueryWithParamList(query, parameters);
             return cmd != null;
         }
 
@@ -83,15 +90,27 @@ namespace StaemDatabaseApp.DBLayer
         public static bool EditGame(string name, string description, int quantity, double price, int status, int developer, int ID)
         {
             string query = "UPDATE staem.Games SET Game_name=@Game_name,Game_description=@Game_description,Game_quantity=@Game_quantity,Game_price=@Game_price,Status_id=@Status_id,Developer_id=@Developer_id WHERE ID=@ID;";
-            
-            cmd = DBHelper.RunQueryToUpdateGame(query, name, description, quantity, price, status, developer, ID);
+
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters.Add("@Game_name", name);
+            parameters.Add("@Game_description", description);
+            parameters.Add("@Game_quantity", quantity.ToString());
+            parameters.Add("@Game_price", price.ToString());
+            parameters.Add("@Status_id", status.ToString());
+            parameters.Add("@Developer_id", developer.ToString());
+            parameters.Add("@ID", ID.ToString());
+            cmd = DBHelper.RunQueryWithParamList(query, parameters);
+
             return cmd != null;
         }
 
         public static bool SellGame(int id, int newQuantity)
         {
-            string query = "UPDATE staem.Games Set Game_quantity=" + newQuantity + " WHERE ID=@ID";
-            cmd = DBHelper.RunQueryWithID(query, id);
+            string query = "UPDATE staem.Games Set Game_quantity=@Game_quantity WHERE ID=@ID";
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters.Add("@Game_quantity", newQuantity.ToString());
+            parameters.Add("@ID", id.ToString());
+            cmd = DBHelper.RunQueryWithParamList(query, parameters);
             return cmd != null;
         }
 

@@ -36,5 +36,16 @@ namespace StaemDatabaseApp.DBLayer
             }
             return allOrders;
         }
+
+        public static bool AddOrder(int quantity, int gameID, int supplierID)
+        {
+            string query = "INSERT INTO staem.Orders (Order_quantity, Game_id, Supplier_id) VALUES (@Quantity, @GameID, @SupplierID);";
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters.Add("@Quantity", quantity.ToString());
+            parameters.Add("@GameID", gameID.ToString());
+            parameters.Add("@Supplier", supplierID.ToString());
+            cmd = DBHelper.RunQueryWithParamList(query, parameters);
+            return cmd != null;
+        }
     }
 }

@@ -36,7 +36,7 @@ namespace StaemDatabaseApp
 
         private void showDevelopersButton_Click(object sender, RoutedEventArgs e)
         {
-            developersDataGrid.ItemsSource = DevelopersDA.RetriveAllDevelopers();
+            developersDataGrid.ItemsSource = DevelopersDA.RetrieveAllDevelopers();
         }
 
         private void showGamesButton_Click(object sender, RoutedEventArgs e)
@@ -227,6 +227,14 @@ namespace StaemDatabaseApp
             {
                 MessageBox.Show("An error occuried during this action.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void addNewOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window addOrderWindow = new AddOrderWindow();
+            addOrderWindow.Owner = this;
+            addOrderWindow.ShowDialog();
+            ordersDataGrid.Items.Refresh();
         }
     }
 }

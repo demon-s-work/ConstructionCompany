@@ -35,5 +35,10 @@ namespace StaemDatabaseApp.Model
         public string Name { get => name; set => name = value; }
         public string Address { get => address; set => address = value; }
         public string Contact { get => contact; set => contact = value; }
+
+        public override string ToString()
+        {
+            return Name + " : " + Id.ToString();
+        }
     }
 }
