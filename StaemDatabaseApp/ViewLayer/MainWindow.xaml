@@ -87,7 +87,7 @@
                         <Button x:Name="sellGameButton"
                                 Content="Sell Game"
                                 Margin="5"
-                                VerticalAlignment="Center" />
+                                VerticalAlignment="Center" Click="sellGameButton_Click" />
                     </StackPanel>
                     <DataGrid x:Name="gamesDataGrid"
                               Grid.Column="2"

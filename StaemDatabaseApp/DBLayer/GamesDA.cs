@@ -88,5 +88,12 @@ namespace StaemDatabaseApp.DBLayer
             return cmd != null;
         }
 
+        public static bool SellGame(int id, int newQuantity)
+        {
+            string query = "UPDATE staem.Games Set Game_quantity=" + newQuantity + " WHERE ID=@ID";
+            cmd = DBHelper.RunQueryWithID(query, id);
+            return cmd != null;
+        }
+
     }
 }

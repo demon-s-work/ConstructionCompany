@@ -179,5 +179,54 @@ namespace StaemDatabaseApp
             editGameWindow.ShowDialog();
             gamesDataGrid.Items.Refresh();
         }
+
+        private void sellGameButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Get selected index from grid
+
+            Game game = (Game)gamesDataGrid.SelectedItem;
+
+            if (game == null)
+            { // Typ wiadomosci i ikonka?
+                MessageBox.Show("Select game first.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
+            // Check quantity
+            if (game.Quantity <= 0)
+            {
+                MessageBox.Show("There is no game in stock.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            // Check status
+            if (String.Equals(game.Status.Name, "Unavailable", StringComparison.OrdinalIgnoreCase))
+            {
+                MessageBox.Show("This game is unavailable currently.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            // Try to sell game
+            if (GamesDA.SellGame(game.Id, game.Quantity - 1))
+            {
+
+                // Creating game info
+                StringBuilder sb = new StringBuilder();
+                sb.Append("Game informations:\n");
+                //sb.Append("ID: " + game.Id + "\n");
+                sb.Append("Name: " + game.Name + "\n");
+                //sb.Append("Developer: " + game.Developer.Name + "\n");
+                //sb.Append("Description: " + game.Description + "\n");
+                //sb.Append("Quantity: " + game.Quantity + "\n");
+                sb.Append("Price: " + game.Price + "\n");
+                sb.Append("Status: " + game.Status.Name + "\n");
+                sb.Append("Status price multiplier: " + game.Status.PriceMultiplier + "\n");
+
+                MessageBox.Show(sb.ToString(), "Game sold!", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("An error occuried during this action.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
     }
 }
