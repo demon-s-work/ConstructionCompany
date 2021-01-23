@@ -29,45 +29,32 @@ namespace StaemDatabaseApp.ViewLayer
             gameComboBox.ItemsSource = GamesDA.RetrieveAllGames();
             gameComboBox.SelectedIndex = 0;
 
-            supplierComboBox.ItemsSource = SuppliersDA.RetrieveAllSuppliers();
-            supplierComboBox.SelectedIndex = 0;
+            customerComboBox.ItemsSource = CustomersDA.RetrieveAllCustomers();
+            customerComboBox.SelectedIndex = 0;
         }
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            if (quantityTextBox.Text.Length == 0)
-            {
-                MessageBox.Show("Quantity cannot be empty", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
+            // Retrieve date
+            var date = (DateTime)datePicker.SelectedDate;
 
-            int quantity;
-            try
+            // Check if date is correct
+            if(DateTime.Compare(date, DateTime.Now) <= 0)
             {
-                quantity = Int32.Parse(quantityTextBox.Text);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error while converting quantity.\nTry again.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
-            if(quantity <= 0)
-            {
-                MessageBox.Show("Error - quantity value below 0.\nTry again.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Time travel is illegal in this shop", "Eggor", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
 
-            //Retrieve status and developer ID
+            //Retrieve customer and game
             Game game = (Game)gameComboBox.SelectedItem;
-            Supplier supplier = (Supplier)supplierComboBox.SelectedItem;
+            Customer customer = (Customer)customerComboBox.SelectedItem;
 
 
-            bool answer = OrderDA.AddOrder(quantity, game.Id, supplier.Id);
+            bool answer = ReservationsDA.AddReservation(date, game.Id, customer.Id);
             if (answer)
             {
-                MessageBox.Show("Order was completed successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Reservation was added successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 Close();
             }
             else

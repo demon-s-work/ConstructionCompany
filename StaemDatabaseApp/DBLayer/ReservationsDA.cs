@@ -58,5 +58,17 @@ namespace StaemDatabaseApp.DBLayer
             }
             return reservation;
         }
+
+        public static bool AddReservation(DateTime date, int game, int client)
+        {
+            string query = "INSERT INTO staem.Reservations (Reservation_date, Customer_id, Game_id)" +
+                " VALUES (@Reservation_date, @Customer_id, @Game_id);";
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters.Add("@Reservation_date", date.ToString());
+            parameters.Add("@Customer_id", game.ToString());
+            parameters.Add("@Game_id", client.ToString());
+            cmd = DBHelper.RunQueryWithParamList(query, parameters);
+            return cmd != null;
+        }
     }
 }
