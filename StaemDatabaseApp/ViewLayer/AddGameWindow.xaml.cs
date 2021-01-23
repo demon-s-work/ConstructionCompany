@@ -47,6 +47,30 @@ namespace StaemDatabaseApp.ViewLayer
                 return;
             }
 
+            int quantity;
+            double price;
+            try
+            {
+                quantity = Int32.Parse(quantityTextBox.Text);
+                price = Double.Parse(priceTextBox.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error while converting quantity and price.\nTry again.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            if(quantity < 0)
+            {
+                MessageBox.Show("Error - game quantity value below 0.\nTry again.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (price <= 0)
+            {
+                MessageBox.Show("Error - game price below 0.\nTry again.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             // Game data is correct
 
             //Retrieve status and developer ID

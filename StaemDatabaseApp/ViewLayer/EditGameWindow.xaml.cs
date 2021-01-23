@@ -38,7 +38,7 @@ namespace StaemDatabaseApp.ViewLayer
             statusComboBox.ItemsSource = StatusDA.RetrieveAllStatuses();
             for(int i=0; i< statusComboBox.Items.Count; i++)
             {
-                if (((Status)statusComboBox.Items.GetItemAt(i)).Equals(game.Status))
+                if (((Status)statusComboBox.Items.GetItemAt(i)).Id == game.Status.Id)
                 {
                     statusComboBox.SelectedIndex = i;
                     break;
@@ -48,7 +48,7 @@ namespace StaemDatabaseApp.ViewLayer
             developerComboBox.ItemsSource = DevelopersDA.RetriveAllDevelopers();
             for (int i = 0; i < developerComboBox.Items.Count; i++)
             {
-                if (((Developer)developerComboBox.Items.GetItemAt(i)).Equals(game.Developer))
+                if (((Developer)developerComboBox.Items.GetItemAt(i)).Id == game.Developer.Id)
                 {
                     developerComboBox.SelectedIndex = i;
                     break;
