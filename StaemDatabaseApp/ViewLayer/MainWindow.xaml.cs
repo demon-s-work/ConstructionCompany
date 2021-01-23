@@ -67,6 +67,7 @@ namespace StaemDatabaseApp
         private void addCustomerButton_Click(object sender, RoutedEventArgs e)
         {
             Window addCustomerWindow = new AddCustomerWindow();
+            addCustomerWindow.Owner = this;
             addCustomerWindow.ShowDialog();
             customersDataGrid.Items.Refresh();
         }
