@@ -44,7 +44,7 @@ namespace StaemDatabaseApp
 
         private void showOrdersButton_Click(object sender, RoutedEventArgs e)
         {
-            //ordersDataGrid.ItemsSource = OrderDA.RetrieveAllOrders();
+            ordersDataGrid.ItemsSource = OrderDA.RetrieveAllOrders();
         }
 
         private void showReservationsButton_Click(object sender, RoutedEventArgs e)
