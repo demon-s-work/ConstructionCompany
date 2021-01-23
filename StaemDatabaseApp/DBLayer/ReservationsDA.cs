@@ -40,7 +40,7 @@ namespace StaemDatabaseApp.DBLayer
         public static Reservation RetrieveReservationByID(int reservationID)
         {
             string query = "SELECT * FROM staem.reservations WHERE ID = (@ID) limit 1;";
-            cmd = DBHelper.RunQuery(query, reservationID);
+            cmd = DBHelper.RunQueryWithID(query, reservationID);
             Reservation reservation = null;
             if (cmd != null)
             {

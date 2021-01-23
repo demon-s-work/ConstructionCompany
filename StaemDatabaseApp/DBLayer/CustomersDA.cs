@@ -42,7 +42,7 @@ namespace StaemDatabaseApp.DBLayer
         public static Customer retrieveCustomerByID(int customerID)
         {
             string query = "SELECT * FROM staem.customers WHERE ID = (@ID) limit 1;";
-            cmd = DBHelper.RunQuery(query, customerID);
+            cmd = DBHelper.RunQueryWithID(query, customerID);
             Customer customer = null;
             if (cmd != null)
             {

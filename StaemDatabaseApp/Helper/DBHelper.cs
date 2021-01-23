@@ -102,7 +102,7 @@ namespace StaemDatabaseApp.Helper
             return cmd;
         }
 
-        public static MySqlCommand RunQuery(string query, int id)
+        public static MySqlCommand RunQueryWithID(string query, int id)
         {
             try
             {

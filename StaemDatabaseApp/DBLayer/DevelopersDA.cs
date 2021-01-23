@@ -40,7 +40,7 @@ namespace StaemDatabaseApp.DBLayer
         public static Developer RetrieveDeveloperByID(int developerID)
         {
             string query = "SELECT * FROM staem.developers WHERE ID = (@ID) limit 1;";
-            cmd = DBHelper.RunQuery(query, developerID);
+            cmd = DBHelper.RunQueryWithID(query, developerID);
             Developer developer = null;
             if (cmd != null)
             {

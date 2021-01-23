@@ -40,7 +40,7 @@ namespace StaemDatabaseApp.DBLayer
         public static Status RetrieveStatusByID(int statusID)
         {
             string query = "SELECT * FROM staem.statuses WHERE ID = (@ID) limit 1;";
-            cmd = DBHelper.RunQuery(query, statusID);
+            cmd = DBHelper.RunQueryWithID(query, statusID);
             Status status = null;
             if (cmd != null)
             {

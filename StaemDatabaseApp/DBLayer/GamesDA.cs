@@ -43,7 +43,7 @@ namespace StaemDatabaseApp.DBLayer
         public static Game RetrieveGameByID(int gameID)
         {
             string query = "SELECT * FROM staem.games WHERE ID = (@ID) limit 1;";
-            cmd = DBHelper.RunQuery(query, gameID);
+            cmd = DBHelper.RunQueryWithID(query, gameID);
             Game game = null;
             if (cmd != null)
             {

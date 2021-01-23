@@ -19,7 +19,7 @@ namespace StaemDatabaseApp.DBLayer
         public static Supplier RetrieveSupplierByName(string supplierName)
         {
             string query = "SELECT * FROM staem.suppliers where Supplier_name = (@supplierName) limit 1";
-            //cmd = DBHelper.RunQuery(query, supplierName);
+            //cmd = DBHelper.RunQueryWithID(query, supplierName);
             Supplier supplier = null;
             if(cmd != null)
             {
@@ -41,7 +41,7 @@ namespace StaemDatabaseApp.DBLayer
         public static Supplier RetrieveSupplierByID(int supplierID)
         {
             string query = "SELECT * FROM staem.suppliers WHERE ID = (@ID) limit 1";
-            cmd = DBHelper.RunQuery(query, supplierID);
+            cmd = DBHelper.RunQueryWithID(query, supplierID);
             Supplier supplier = null;
             if (cmd != null)
             {
