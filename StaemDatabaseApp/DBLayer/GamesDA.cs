@@ -64,5 +64,41 @@ namespace StaemDatabaseApp.DBLayer
             }
             return game;
         }
+
+        public static bool AddGame(String name, String description, string quantity, string price, string statusID, string developerID)
+        {
+            string query = "INSERT INTO staem.Games (`Game_name`, `Game_description`, `Game_quantity`, `Game_price`, `Status_id`, `Developer_id`)" +
+                "VALUES ('" + name + "', '" + description + "', " + quantity + ", " + price + ", " + statusID + ", " + developerID + ");";
+            cmd = DBHelper.RunQueryNoParameters(query);
+            return cmd != null;
+        }
+
+        public static bool RemoveGame(int id)
+        {
+            string query = "DELETE FROM staem.Games WHERE ID = (@ID);";
+            cmd = DBHelper.RunQueryWithID(query, id);
+            return cmd != null;
+        }
+
+        public static bool EditGame(string name, string description, int quantity, double price, int status, int developer, int ID)
+        {
+            /*StringBuilder sb = new StringBuilder();
+            sb.Append("UPDATE staem.Games ");
+            sb.Append("SET Game_name = '" + game.Name + "', ");
+            sb.Append("Game_description = '" + game.Description + "', ");
+            sb.Append("Game_quantity = " + game.Quantity + ", ");
+            sb.Append("Game_price = " + game.Price + ", ");
+            sb.Append("Status_id = " + game.Status.Id + ", ");
+            sb.Append("Developer_id = " + game.Status.Id + " ");
+            sb.Append("WHERE ID = (@ID);");*/
+
+            //string query = sb.ToString();
+            string query = "UPDATE staem.Games SET Game_name=@Game_name,Game_description=@Game_description,Game_quantity=@Game_quantity,Game_price=@Game_price,Status_id=@Status_id,Developer_id=@Developer_id WHERE ID=@ID;";
+            
+
+            cmd = DBHelper.RunQueryToUpdateGame(query, name, description, quantity, price, status, developer, ID);
+            return cmd != null;
+        }
+
     }
 }

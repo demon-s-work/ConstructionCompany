@@ -19,21 +19,44 @@ namespace StaemDatabaseApp.ViewLayer
     /// <summary>
     /// Interaction logic for AddGameWindow.xaml
     /// </summary>
-    public partial class AddGameWindow : Window
+    public partial class EditGameWindow : Window
     {
-        public AddGameWindow()
+        private Game game;
+        public EditGameWindow(Game game)
         {
             InitializeComponent();
 
+            this.game = game;
+
+            // Setting up game parameters
+            nameTextBox.Text = game.Name;
+            descriptionTextBox.Text = game.Description;
+            quantityTextBox.Text = game.Quantity.ToString();
+            priceTextBox.Text = game.Price.ToString();
+
             //  Setting up status and developer comboBox
             statusComboBox.ItemsSource = StatusDA.RetrieveAllStatuses();
-            statusComboBox.SelectedIndex = 0;
+            for(int i=0; i< statusComboBox.Items.Count; i++)
+            {
+                if (((Status)statusComboBox.Items.GetItemAt(i)).Equals(game.Status))
+                {
+                    statusComboBox.SelectedIndex = i;
+                    break;
+                }
+            }
 
             developerComboBox.ItemsSource = DevelopersDA.RetriveAllDevelopers();
-            developerComboBox.SelectedIndex = 0;
+            for (int i = 0; i < developerComboBox.Items.Count; i++)
+            {
+                if (((Developer)developerComboBox.Items.GetItemAt(i)).Equals(game.Developer))
+                {
+                    developerComboBox.SelectedIndex = i;
+                    break;
+                }
+            }
         }
 
-        private void addButton_Click(object sender, RoutedEventArgs e)
+        private void applyButton_Click(object sender, RoutedEventArgs e)
         {
             // Verify game data
             if (nameTextBox.Text.Length == 0)
@@ -47,6 +70,18 @@ namespace StaemDatabaseApp.ViewLayer
                 return;
             }
 
+            int quantity;
+            double price;
+            try
+            {
+                quantity = Int32.Parse(quantityTextBox.Text);
+                price = Double.Parse(priceTextBox.Text);
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Error while converting quantity and price.\nTry again.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             // Game data is correct
 
             //Retrieve status and developer ID
@@ -56,10 +91,10 @@ namespace StaemDatabaseApp.ViewLayer
             string developerID = developer.Id.ToString();
 
 
-            bool answer = GamesDA.AddGame(nameTextBox.Text, descriptionTextBox.Text, quantityTextBox.Text, priceTextBox.Text, statusID, developerID);
+            bool answer = GamesDA.EditGame(nameTextBox.Text, descriptionTextBox.Text, quantity, price, status.Id, developer.Id, game.Id);
             if (answer)
             {
-                MessageBox.Show("Game was added successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Game was edited successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 Close();
             }
             else
