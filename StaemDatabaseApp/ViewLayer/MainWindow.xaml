@@ -27,7 +27,7 @@
                         <Button x:Name="addCustomerButton"
                                 Content="Add Customer"
                                 Margin="5"
-                                VerticalAlignment="Center" />
+                                VerticalAlignment="Center" Click="addCustomerButton_Click" />
                     </StackPanel>
                     <DataGrid x:Name="customersDataGrid"
                               Grid.Column="1"

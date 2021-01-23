@@ -61,5 +61,10 @@ namespace StaemDatabaseApp
         {
             suppliersDataGrid.ItemsSource = SuppliersDA.RetrieveAllSuppliers();
         }
+
+        private void addCustomerButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -88,7 +88,7 @@
   <Class Name="StaemDatabaseApp.Model.Order" Collapsed="true">
     <Position X="8.25" Y="3.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAIAAAACAAAAAAAgAAACIAAAAgAAAAgA=</HashCode>
+      <HashCode>AAACAAAgAAAAAIAAAAGAAAABAAgAAACIACAAgAAAAgA=</HashCode>
       <FileName>Model\Order.cs</FileName>
     </TypeIdentifier>
   </Class>
