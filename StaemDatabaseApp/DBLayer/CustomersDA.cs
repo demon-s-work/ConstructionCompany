@@ -39,7 +39,7 @@ namespace StaemDatabaseApp.DBLayer
             return allCustomers;
         }
 
-        public static Customer retrieveCustomerByID(int customerID)
+        public static Customer RetrieveCustomerByID(int customerID)
         {
             string query = "SELECT * FROM staem.customers WHERE ID = (@ID) limit 1;";
             cmd = DBHelper.RunQueryWithID(query, customerID);
@@ -62,9 +62,9 @@ namespace StaemDatabaseApp.DBLayer
             return customer;
         }
 
-        public static bool addCustomer(String name, String surname, string priceMultiplier, string gamesBought)
+        public static bool addCustomer(string name, string surname, string priceMultiplier, string gamesBought)
         {
-            // INSERT INTO `staem`.`Customers` (`ID`, `Customer_name`, `Customer_surname`, `Customer_price_multiplier`, `Customer_games_bought`) 
+            // INSERT INTO `staem`.`Customers` (`ID`, `Customer_name`, `Customer_surname`, `Customer_price_multiplier`, `Customer_games_bought`)
             // VALUES (1, 'Zniżka', 'Pracownik', 0.9, 0);
             string query = "INSERT INTO `staem`.`Customers` (`Customer_name`, `Customer_surname`, `Customer_price_multiplier`, `Customer_games_bought`)" +
                 "VALUES ('" + name + "', '" + surname + "', " + priceMultiplier + ", " + gamesBought + ");";
@@ -72,7 +72,7 @@ namespace StaemDatabaseApp.DBLayer
             return cmd != null;
         }
 
-        public static bool removeCustomer(int id)
+        public static bool RemoveCustomer(int id)
         {
             string query = "DELETE FROM staem.Customers WHERE ID = (@ID)";
             cmd = DBHelper.RunQueryWithID(query, id);

@@ -27,7 +27,7 @@ namespace StaemDatabaseApp.Model
             Date = date_;
             int customerID_;
             Int32.TryParse(customerID, out customerID_);
-            Customer customer = CustomersDA.retrieveCustomerByID(customerID_);
+            Customer customer = CustomersDA.RetrieveCustomerByID(customerID_);
             Customer = customer;
             int gameID_;
             Int32.TryParse(gameID, out gameID_);
