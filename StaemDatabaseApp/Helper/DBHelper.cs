@@ -72,6 +72,9 @@ namespace StaemDatabaseApp.Helper
                     case 1045:
                         MessageBox.Show("Invalid username or password, try again.", "Authorization", MessageBoxButton.OK, MessageBoxImage.Information);
                         break;
+                    default:
+                        MessageBox.Show("Unknown error." + "\n" + ex.Message, "Unknown", MessageBoxButton.OK, MessageBoxImage.Error);
+                        break;
                 }
                 return false;
             }

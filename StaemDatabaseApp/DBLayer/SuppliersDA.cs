@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace StaemDatabaseApp.DBLayer
 {
-    class SuppliersDA
+    static class SuppliersDA
     {
         private static MySqlCommand cmd = null;
         private static DataTable dt;
