@@ -129,7 +129,8 @@
                                 Margin="5"
                                 VerticalAlignment="Center" />
                     </StackPanel>
-                    <DataGrid Grid.Column="1"
+                    <DataGrid x:Name="reservationsDataGrid"
+                              Grid.Column="1"
                               Margin="5" />
                 </Grid>
             </TabItem>
