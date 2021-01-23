@@ -81,6 +81,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ViewLayer\AddGameWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ViewLayer\LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -110,6 +114,9 @@
     <Compile Include="Model\Supplier.cs" />
     <Compile Include="ViewLayer\AddCustomerWindow.xaml.cs">
       <DependentUpon>AddCustomerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLayer\AddGameWindow.xaml.cs">
+      <DependentUpon>AddGameWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewLayer\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
