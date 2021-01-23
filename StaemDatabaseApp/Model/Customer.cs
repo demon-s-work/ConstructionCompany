@@ -46,5 +46,10 @@ namespace StaemDatabaseApp.Model
         public int GamesBought { get => gamesBought; set => gamesBought = value; }
         public int Id { get => id; set => id = value; }
 
+        public override string ToString()
+        {
+            return Name + " " + Surname + " " + PriceMultiplier +  " : " + Id.ToString();
+        }
+
     }
 }

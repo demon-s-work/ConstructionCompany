@@ -4,6 +4,7 @@ using StaemDatabaseApp.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,7 +65,7 @@ namespace StaemDatabaseApp.DBLayer
             string query = "INSERT INTO staem.Reservations (Reservation_date, Customer_id, Game_id)" +
                 " VALUES (@Reservation_date, @Customer_id, @Game_id);";
             Dictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("@Reservation_date", date.ToString());
+            parameters.Add("@Reservation_date", date.ToString("yyyy-MM-dd", DateTimeFormatInfo.InvariantInfo));
             parameters.Add("@Customer_id", game.ToString());
             parameters.Add("@Game_id", client.ToString());
             cmd = DBHelper.RunQueryWithParamList(query, parameters);

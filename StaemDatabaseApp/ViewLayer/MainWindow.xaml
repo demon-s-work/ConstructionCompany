@@ -131,7 +131,7 @@
                         <Button x:Name="addReservation"
                                 Content="Add Reservation"
                                 Margin="5"
-                                VerticalAlignment="Center" />
+                                VerticalAlignment="Center" Click="addReservation_Click" />
                     </StackPanel>
                     <DataGrid x:Name="reservationsDataGrid"
                               Grid.Column="1"

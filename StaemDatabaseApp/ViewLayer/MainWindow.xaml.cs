@@ -236,5 +236,13 @@ namespace StaemDatabaseApp
             addOrderWindow.ShowDialog();
             ordersDataGrid.Items.Refresh();
         }
+
+        private void addReservation_Click(object sender, RoutedEventArgs e)
+        {
+            Window addReservationWindow = new AddReservationWindow();
+            addReservationWindow.Owner = this;
+            addReservationWindow.ShowDialog();
+            ordersDataGrid.Items.Refresh();
+        }
     }
 }
