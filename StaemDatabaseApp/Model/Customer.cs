@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +14,9 @@ namespace StaemDatabaseApp.Model
         {
             int id_ = 0;
             Int32.TryParse(id, out id_);
-            float priceMultiplier_ = 0.0f;
-            Single.TryParse(priceMultiplier, out priceMultiplier_);
+            float priceMultiplier_ = 1.00f;
+            if (!Single.TryParse(priceMultiplier, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out priceMultiplier_))
+                priceMultiplier_ = 1.00f;
             int gamesBought_ = 0;
             Int32.TryParse(gamesBought, out gamesBought_);
 
