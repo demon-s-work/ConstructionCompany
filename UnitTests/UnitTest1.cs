@@ -9,7 +9,6 @@ namespace UnitTests
     [TestClass]
     public class constructorTests
     {
-
         [TestMethod]
         public void customerTests()
         {

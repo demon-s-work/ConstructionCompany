@@ -88,6 +88,10 @@
                                 Content="Sell Game"
                                 Margin="5"
                                 VerticalAlignment="Center" Click="sellGameButton_Click" />
+                        <Button x:Name="filterButton"
+                            Content="Apply filter"
+                            Margin="5"
+                            VerticalAlignment="Center" Click="filterButton_Click"/>
                     </StackPanel>
                     <DataGrid x:Name="gamesDataGrid"
                               Grid.Column="2"
@@ -183,6 +187,7 @@
                               Grid.ColumnSpan="3" />
                 </Grid>
             </TabItem>
+            <Button Content="Button" Height="27" Width="82"/>
         </TabControl>
     </Grid>
 </Window>

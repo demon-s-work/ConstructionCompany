@@ -244,5 +244,10 @@ namespace StaemDatabaseApp
             addReservationWindow.ShowDialog();
             ordersDataGrid.Items.Refresh();
         }
+
+        private void filterButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

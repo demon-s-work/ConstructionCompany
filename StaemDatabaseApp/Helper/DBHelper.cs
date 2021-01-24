@@ -66,10 +66,10 @@ namespace StaemDatabaseApp.Helper
             {
                 switch (ex.Number)
                 {
-                    case 0:
+                    case 1045:
                         MessageBox.Show("Cannot connect to server.", "Connection", MessageBoxButton.OK, MessageBoxImage.Error);
                         break;
-                    case 1045:
+                    case 0:
                         MessageBox.Show("Invalid username or password, try again.", "Authorization", MessageBoxButton.OK, MessageBoxImage.Information);
                         break;
                     default:
