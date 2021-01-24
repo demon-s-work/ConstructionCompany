@@ -67,12 +67,6 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void GameTests()
-        {
-
-        }
-
-        [TestMethod]
         public void SupplierTests()
         {
             Supplier s1 = new Supplier("1", "name", "address", "contact");
@@ -88,18 +82,6 @@ namespace UnitTests
                            s2.Address.Equals("address") &&
                            s2.Contact.Equals("contact")
                );
-        }
-
-        [TestMethod]
-        public void OrderTests()
-        {
-
-        }
-
-        [TestMethod]
-        public void ReservationTests()
-        {
-
         }
 
         [TestMethod]
