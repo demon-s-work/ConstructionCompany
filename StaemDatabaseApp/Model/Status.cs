@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,8 @@ namespace StaemDatabaseApp.Model
             Name = name;
             Description = description;
             float priceMultiplier_;
-            Single.TryParse(priceMultiplier, out priceMultiplier_);
+            if (!Single.TryParse(priceMultiplier, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out priceMultiplier_))
+                priceMultiplier_ = 1.00f;
             PriceMultiplier = priceMultiplier_;
         }
 

@@ -29,10 +29,10 @@ namespace StaemDatabaseApp.DBLayer
                 foreach (DataRow dr in dt.Rows)
                 {
                     string id = dr["ID"].ToString();
-                    string name = dr["Reservation_date"].ToString();
+                    string date = dr["Reservation_date"].ToString();
                     string customerID = dr["Customer_id"].ToString();
                     string gameID = dr["Game_id"].ToString();
-                    allReservations.Add(new Reservation(id, name, customerID, gameID));
+                    allReservations.Add(new Reservation(id, date, customerID, gameID));
                 }
             }
             return allReservations;

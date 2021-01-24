@@ -49,5 +49,75 @@ namespace UnitTests
                 );
 
         }
+
+        [TestMethod]
+        public void DeveloperTests()
+        {
+            Developer d1 = new Developer( "1", "name", "contact" );
+            Developer d2 = new Developer( "a", "name", "contact" );
+
+            Assert.IsTrue(d1.Id == 1 &&
+                            d1.Name.Equals("name") &&
+                            d1.Contact.Equals("contact")
+                );
+            Assert.IsTrue(d2.Id == 0 &&
+                            d2.Name.Equals("name") &&
+                            d2.Contact.Equals("contact")
+                );
+        }
+
+        [TestMethod]
+        public void GameTests()
+        {
+
+        }
+
+        [TestMethod]
+        public void SupplierTests()
+        {
+            Supplier s1 = new Supplier("1", "name", "address", "contact");
+            Supplier s2 = new Supplier("a", "name", "address", "contact");
+
+            Assert.IsTrue(s1.Id == 1 &&
+                           s1.Name.Equals("name") &&
+                           s1.Address.Equals("address") &&
+                           s1.Contact.Equals("contact")
+               );
+            Assert.IsTrue(s2.Id == 0 &&
+                           s2.Name.Equals("name") &&
+                           s2.Address.Equals("address") &&
+                           s2.Contact.Equals("contact")
+               );
+        }
+
+        [TestMethod]
+        public void OrderTests()
+        {
+
+        }
+
+        [TestMethod]
+        public void ReservationTests()
+        {
+
+        }
+
+        [TestMethod]
+        public void StatusTests()
+        {
+            Status s1 = new Status("1", "name", "description", "0.98");
+            Status s2 = new Status("2", "name", "description", "asd");
+
+            Assert.IsTrue(s1.Id == 1 &&
+                           s1.Name.Equals("name") &&
+                           s1.Description.Equals("description") &&
+                           s1.PriceMultiplier == 0.98f
+               );
+            Assert.IsTrue(s2.Id == 2 &&
+                           s2.Name.Equals("name") &&
+                           s2.Description.Equals("description") &&
+                           s2.PriceMultiplier == 1.00f
+               );
+        }
     }
 }
