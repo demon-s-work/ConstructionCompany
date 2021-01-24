@@ -7,16 +7,11 @@ using StaemDatabaseApp.Model;
 namespace UnitTests
 {
     [TestClass]
-    public class UnitTest1
+    public class constructorTests
     {
-        [TestMethod]
-        public void TestMethod1()
-        {
-            Assert.AreEqual(0, 0);
-        }
 
         [TestMethod]
-        public void constructorTests()
+        public void customerTests()
         {
             // Dane Customera | -> error
             // id ->  auto(0)
