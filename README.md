@@ -1,69 +1,70 @@
 # Staem
-> Terrain mesh generation using Peril Noise 2D function.
+> WPF Application with MySQL database server connection.
 
 ## Table of contents
 - [Staem](#staem)
   - [Table of contents](#table-of-contents)
   - [General info](#general-info)
-  - [Demo](#demo)
   - [Screenshots](#screenshots)
   - [Technologies](#technologies)
   - [Setup and run](#setup-and-run)
   - [Features](#features)
-  - [Issues](#issues)
   - [Status](#status)
-  - [Inspiration](#inspiration)
   - [Contact](#contact)
 
 ## General info
-Main goal of this project was to learn about terrain generation using noise function. Besides, I also wanted to create eye-catching, fancy mesh-based visualization.
-
-## Demo
-Project is avaible online on Github Pages [here](https://michaltkacz.github.io/neon-world/).
+The purpose of project was to learn how to write an application, that communicates with database stored on server. First we have created database from scratch and uploaded it to the server. Then we have programmed WPF application that connects to the server. The application is not fully functional; however, it allows user to execute basic use cases. All in all, whole project was great learning experience.
 
 ## Screenshots
-![Example screenshot1](./images/image1.png)
-![Example screenshot2](./images/image2.png)
-![Example screenshot3](./images/image3.png)
+![Example screenshot1](./Images/image1.png)
+
+![Example screenshot2](./Images/image2.png)
+
+![Example screenshot3](./Images/image3.png)
+
+![ERD](./Diagrams/ERD.png)
 
 ## Technologies
-* [Three.js](https://threejs.org/ "Three.js webpage") library (project developed under version: [r125](https://github.com/mrdoob/three.js/releases "Three.js version changelog")).
-* [stats.js](https://github.com/mrdoob/stats.js/ "stats.js github page") library.
+* MySQL Workbench 8.0.22 for MySQL database project.
+* MYSQL Server 8.0.22 for local database server. 
+* MySQL Conector/NET 8.0.22 library for connection beetwen application and database server.
+* WPF .Net Framework 4.7.2 for application (Visual Studio 2019).
+  
+Application runs on Windows system (developed and tested on Windows 10).
 
 ## Setup and run
-To run it locally, just download repository and launch `index.html` on local server. Web browser must support WebGL. In case you don't know whether your browser supports WebGL or not, you can check it [here](https://get.webgl.org/).
+1. Download repository.
+2. Download and install tools ([Technologies](#technologies)).
+3. Configure MySQL Server as follows:
+   
+```
+Connection Method:  Standard (TCP/IP)
+Hostname:           127.0.0.1
+Port:               3306
+Username:           root
+Password:           root
+```
+4. Launch server.
+5. Upload [database code](./DatabaseProject/staem.sql) as new schema.
+6. Build WPF application using Viusal Studio.
+7. Launch application.
+8. Login as `username: root` and `password: root`.
 
 ## Features
-List of features:
-* Terrarin generation using Perlin noise 2D function.
-* Mouse interaction with camera.
-* A list of nine settings to play with.
-
-| Setting          | Value Range    | Description                                 |
-| ---------------- | -------------- | ------------------------------------------- |
-| autoRotateCamera | bool           | Enable/disable automatic camera rotation    |
-| showAxesHelper   | bool           | Show/hide axes helper                       |
-| width            | 2-256          | Width of mesh                               |
-| height           | 2-256          | Height of mesh                              |
-| spacing          | 2-32           | Mesh cell size                              |
-| noiseAmpX        | 0-128          | 2D Perlin noise X amplification value       |
-| noiseAmpY        | 0-128          | 2D Perlin noise Y amplification value       |
-| noiseFactor      | 0-1024         | 2D Perlin noise general value amplification |
-| planeColor       | RGB Hex values | Color of the mesh                           |
-
-To-do ideas:
-* Add more variations of mesh shape (e.g. oval, triangle, pentagon, hexagon, etc.).
-* Adjust setting range values to achieve more interesting results.
-* Add animations (i.e. mesh alters with the flow of time).
-
-## Issues
-Main issue is quite heavy performance drop, which occurs while changing settings. It is caused by rebuilding whole plane many times in very short time. Adding, for example, max number of rebuilds per second limit seems to be the simplest (not nessecery the most reliable) solution to fix this problem.
+This application in not fully functional. It realizes following use cases:
+* Login to application and database.
+* Display database content.
+* Add new game.
+* Remove game.
+* Modify game.
+* Sell game.
+* Reserve game.
+* Add new order.
+* Add new customer.
+* Set discount.
 
 ## Status
-Altough there are interesting features that might be added, this project is no longer developed.
-
-## Inspiration
-Project inspired by [@shiffman](https://github.com/shiffman) ["Coding Challenge #11: 3D Terrain Generation with Perlin Noise in Processing"](https://www.youtube.com/watch?v=IKB1hWWedMk "Youtube video")
+This project is no longer developed.
 
 ## Contact
-Created by [@michaltkacz](https://github.com/michaltkacz) - feel free to contact me!
+Created by [@michaltkacz](https://github.com/michaltkacz) and [@MichalSkubek](https://github.com/MichalSkubek) - feel free to contact us!
