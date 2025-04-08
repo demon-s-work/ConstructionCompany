@@ -170,6 +170,7 @@ namespace StaemDatabaseApp.Helper
             catch (Exception ex)
             {
                 connection.Close();
+                throw ex;
             }
             return cmd;
         }

@@ -150,6 +150,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ViewLayer\AddPositionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ViewLayer\AddReservationWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -170,6 +174,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ViewLayer\EditPositionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ViewLayer\LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -185,6 +193,7 @@
     <Compile Include="DBLayer\DevelopersDA.cs" />
     <Compile Include="DBLayer\GamesDA.cs" />
     <Compile Include="DBLayer\OrderDA.cs" />
+    <Compile Include="DBLayer\PositionsDA.cs" />
     <Compile Include="DBLayer\ReservationsDA.cs" />
     <Compile Include="DBLayer\StatusDA.cs" />
     <Compile Include="DBLayer\SuppliersDA.cs" />
@@ -205,6 +214,9 @@
     <Compile Include="ViewLayer\AddClientWindow.xaml.cs">
       <DependentUpon>AddClientWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewLayer\AddPositionWindow.xaml.cs">
+      <DependentUpon>AddPositionWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewLayer\AddReservationWindow.xaml.cs">
       <DependentUpon>AddReservationWindow.xaml</DependentUpon>
     </Compile>
@@ -219,6 +231,9 @@
     </Compile>
     <Compile Include="ViewLayer\AddGameWindow.xaml.cs">
       <DependentUpon>AddGameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLayer\EditPositionWindow.xaml.cs">
+      <DependentUpon>EditPositionWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewLayer\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>

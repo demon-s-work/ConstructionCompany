@@ -182,6 +182,40 @@
                               Margin="5" />
                 </Grid>
             </TabItem>
+            <TabItem Header="Positions">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="145*" />
+                        <ColumnDefinition Width="649*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="10">
+                        <Button x:Name="showPositionsButton"
+                                Content="Show Positions"
+                                Margin="5"
+                                VerticalAlignment="Center"
+                                Click="ShowPositionsButton_OnClick" />
+                        <Button x:Name="addPositionButton"
+                                Content="Add Position"
+                                Margin="5"
+                                VerticalAlignment="Center" Click="AddPositionButton_OnClick" />
+                        <Button x:Name="removePositionButton"
+                                Content="Remove Position"
+                                Margin="5"
+                                VerticalAlignment="Center" Click="RemovePositionButton_OnClick" />
+                        <Button x:Name="modifyPositionButton"
+                                Content="Modify Position"
+                                Margin="5"
+                                VerticalAlignment="Center" Click="ModifyPositionButton_OnClick" />
+                        <Button x:Name="filterPositionsButton"
+                            Content="Apply filter"
+                            Margin="5"
+                            VerticalAlignment="Center" Click="filterButton_Click"/>
+                    </StackPanel>
+                    <DataGrid x:Name="positionsDataGrid"
+                              Grid.Column="4"
+                              Margin="5" />
+                </Grid>
+            </TabItem>
             <Button Content="Button" Height="27" Width="82"/>
         </TabControl>
     </Grid>
