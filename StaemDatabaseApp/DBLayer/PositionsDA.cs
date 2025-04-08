@@ -73,7 +73,7 @@ namespace StaemDatabaseApp.DBLayer
         public static bool AddPosition(string title, decimal salary, int accessLevel)
         {
             string query = "INSERT INTO `ConstructionCompany`.`Positions` (`Title`, `Salary`, `AccessLevel`)" +
-                "VALUES ('" + title + "', '" + salary + "', " + accessLevel + ");";
+                "VALUES ('" + title + "', '" + salary.ToString().Replace(',','.') + "', " + accessLevel + ");";
             cmd = DBHelper.RunQueryNoParameters(query);
             return cmd != null;
         }

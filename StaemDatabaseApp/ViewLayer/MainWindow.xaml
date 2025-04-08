@@ -54,20 +54,20 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Margin="10">
                         <Button x:Name="showEmployeesButton"
-                                Content="Show Games"
+                                Content="Show Employees"
                                 Margin="5"
                                 VerticalAlignment="Center"
                                 Click="ShowEmployeesButton_OnClick" />
                         <Button x:Name="addEmployeeButton"
-                                Content="Add Game"
+                                Content="Add Employee"
                                 Margin="5"
                                 VerticalAlignment="Center" Click="AddEmployeeButton_OnClick" />
                         <Button x:Name="removeEmployeeButton"
-                                Content="Remove Game"
+                                Content="Remove Employee"
                                 Margin="5"
                                 VerticalAlignment="Center" Click="RemoveEmployeeButton_OnClick" />
                         <Button x:Name="modifyEmployeeButton"
-                                Content="Modify Game"
+                                Content="Modify Employee"
                                 Margin="5"
                                 VerticalAlignment="Center" Click="ModifyEmployeeButton_OnClick" />
                         <Button x:Name="filterEmployeeButton"

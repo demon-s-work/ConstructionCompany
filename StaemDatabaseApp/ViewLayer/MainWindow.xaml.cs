@@ -106,7 +106,7 @@ namespace StaemDatabaseApp
 
 		private void ShowEmployeesButton_OnClick(object sender, RoutedEventArgs e)
 		{
-			throw new NotImplementedException();
+			employeeDataGrid.ItemsSource = EmployeeDA.RetrieveAllEmployees();
 		}
 
 		private void ShowLogsButton_OnClick(object sender, RoutedEventArgs e)
@@ -126,17 +126,62 @@ namespace StaemDatabaseApp
 
 		private void AddEmployeeButton_OnClick(object sender, RoutedEventArgs e)
 		{
-			throw new NotImplementedException();
+			Window addEmployeeWindow = new AddEmployeeWindow();
+			addEmployeeWindow.Owner = this;
+			addEmployeeWindow.ShowDialog();
+			clientsDataGrid.Items.Refresh();
 		}
 
 		private void RemoveEmployeeButton_OnClick(object sender, RoutedEventArgs e)
 		{
-			throw new NotImplementedException();
+			var employee = (Employee)employeeDataGrid.SelectedItem;
+
+			if(employee == null)
+			{
+				MessageBox.Show("Select employee first.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+				return;
+			}
+
+			// Creating client info
+			StringBuilder sb = new StringBuilder();
+			sb.Append("This action will delete following client from database!\n");
+			sb.Append("ID: " + employee.Id + "\n");
+			sb.Append("Name: " + employee.FullName +"\n");
+			sb.Append("\nThis action may not be reversable. Do you want to continue?");
+
+			// Ask if correct client is selected
+			MessageBoxResult result = MessageBox.Show(sb.ToString(), "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+			if (result == MessageBoxResult.Yes)
+			{
+				bool deleted = EmployeeDA.RemoveEmployee(employee.Id);
+				if (deleted)
+				{
+					MessageBox.Show("Client was removed successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+					//customersDataGrid.Items.Remove(customersDataGrid.SelectedItem);
+					ClientsDA.RemoveCustomer(employee.Id);
+				}
+				else
+				{
+					MessageBox.Show("An error occuried during this action.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+				}
+			}
 		}
 
 		private void ModifyEmployeeButton_OnClick(object sender, RoutedEventArgs e)
 		{
-			throw new NotImplementedException();
+			var employee = (Employee)employeeDataGrid.SelectedItem;
+
+			if (employee == null)
+			{
+				MessageBox.Show("Select employee first.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+				return;
+			}
+
+			Window editGameWindow = new EditEmployeeWindow(employee);
+			editGameWindow.Owner = this;
+			editGameWindow.ShowDialog();
+			clientsDataGrid.Items.Refresh();
 		}
 
 		private void AddLogButton_OnClick(object sender, RoutedEventArgs e)

@@ -12,7 +12,8 @@ namespace StaemDatabaseApp.Model
     public class Object
     {
 
-        public Object(string id, string clientID, string type, string address)
+        public Object(string id, int clientID, string type, string address)
+        {
         
             int id_ = 0;
             Int32.TryParse(id, out id_);
