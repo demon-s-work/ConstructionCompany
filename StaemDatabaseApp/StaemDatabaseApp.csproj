@@ -158,27 +158,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewLayer\AddReservationWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ViewLayer\AddOrderWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="ViewLayer\EditClientWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ViewLayer\EditEmployeeWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ViewLayer\EditGameWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ViewLayer\AddGameWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -198,14 +182,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DBLayer\DevelopersDA.cs" />
     <Compile Include="DBLayer\EmployeeDA.cs" />
-    <Compile Include="DBLayer\GamesDA.cs" />
-    <Compile Include="DBLayer\OrderDA.cs" />
     <Compile Include="DBLayer\PositionsDA.cs" />
-    <Compile Include="DBLayer\ReservationsDA.cs" />
-    <Compile Include="DBLayer\StatusDA.cs" />
-    <Compile Include="DBLayer\SuppliersDA.cs" />
     <Compile Include="DBLayer\ClientsDA.cs" />
     <Compile Include="Helper\DBHelper.cs" />
     <Compile Include="Model\Logs.cs" />
@@ -227,23 +205,11 @@
     <Compile Include="ViewLayer\AddPositionWindow.xaml.cs">
       <DependentUpon>AddPositionWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewLayer\AddReservationWindow.xaml.cs">
-      <DependentUpon>AddReservationWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewLayer\AddOrderWindow.xaml.cs">
-      <DependentUpon>AddOrderWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewLayer\EditClientWindow.xaml.cs">
       <DependentUpon>EditClientWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewLayer\EditEmployeeWindow.xaml.cs">
       <DependentUpon>EditEmployeeWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewLayer\EditGameWindow.xaml.cs">
-      <DependentUpon>EditGameWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewLayer\AddGameWindow.xaml.cs">
-      <DependentUpon>AddGameWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewLayer\EditPositionWindow.xaml.cs">
       <DependentUpon>EditPositionWindow.xaml</DependentUpon>

@@ -22,7 +22,7 @@ namespace StaemDatabaseApp.Model
             Int32.TryParse(workTypeID, out workTypeID_);
 
             Id = id_;
-            WorkTypeID = workTypeID_
+            WorkTypeID = workTypeID_;
             OrderID = orderID_;
             Quantity = quantity;
         }
@@ -30,12 +30,12 @@ namespace StaemDatabaseApp.Model
         private int id;
         private int orderID;
         private int workTypeID;
-        private string quantity;
+        private decimal quantity;
 
         public int Id { get => id; set => id = value; }
         public int OrderID { get => orderID; set => orderID = value; }
         public int WorkTypeID { get => workTypeID; set => workTypeID = value; }
-        public string Quantity { get => quantity; set => quantity = value; }
+        public decimal Quantity { get => quantity; set => quantity = value; }
 
         public override string ToString()
         {

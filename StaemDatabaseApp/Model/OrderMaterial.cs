@@ -30,12 +30,12 @@ namespace StaemDatabaseApp.Model
         private int id;
         private int orderID;
         private int materialID;
-        private string quantity;
+        private decimal quantity;
 
         public int Id { get => id; set => id = value; }
         public int OrderID { get => orderID; set => orderID = value; }
         public int MaterialID { get => materialID; set => materialID = value; }
-        public string Quantity { get => quantity; set => quantity = value; }
+        public decimal Quantity { get => quantity; set => quantity = value; }
 
         public override string ToString()
         {

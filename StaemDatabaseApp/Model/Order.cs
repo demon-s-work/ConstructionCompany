@@ -18,17 +18,17 @@ namespace StaemDatabaseApp.Model
 
             int clientID_;
             Int32.TryParse(clientID, out clientID_);
-            clientID = clientID_;
+            this.clientID = clientID_;
 
 
             int objectID_;
             Int32.TryParse(objectID, out objectID_);
-            objectID = objectID_;
+            this.objectID = objectID_;
 
             
             int managerID_;
             Int32.TryParse(managerID, out managerID_);
-            managerID = managerID_
+            this.managerID = managerID_;
         }
 
         private int id;
