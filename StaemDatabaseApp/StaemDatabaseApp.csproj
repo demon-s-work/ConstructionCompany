@@ -190,6 +190,7 @@
     <Compile Include="DBLayer\SuppliersDA.cs" />
     <Compile Include="DBLayer\ClientsDA.cs" />
     <Compile Include="Helper\DBHelper.cs" />
+    <Compile Include="Model\Postitions.cs" />
     <Compile Include="Model\Client.cs" />
     <Compile Include="Model\Developer.cs" />
     <Compile Include="Model\Game.cs" />
