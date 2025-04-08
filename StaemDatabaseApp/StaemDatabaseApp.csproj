@@ -207,12 +207,7 @@
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Postitions.cs" />
     <Compile Include="Model\Client.cs" />
-    <Compile Include="Model\Developer.cs" />
-    <Compile Include="Model\Game.cs" />
     <Compile Include="Model\Order.cs" />
-    <Compile Include="Model\Reservation.cs" />
-    <Compile Include="Model\Status.cs" />
-    <Compile Include="Model\Supplier.cs" />
     <Compile Include="Model\WorkType.cs" />
     <Compile Include="ViewLayer\AddClientWindow.xaml.cs">
       <DependentUpon>AddClientWindow.xaml</DependentUpon>
