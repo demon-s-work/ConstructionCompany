@@ -15,34 +15,37 @@ namespace StaemDatabaseApp.Model
             int id_;
             Int32.TryParse(id, out id_);
             Id = id_;
+
             int clientID_;
             Int32.TryParse(clientID, out clientID_);
-            Quantity = quantity_;
-            int gameID_;
-            Int32.TryParse(gameID, out gameID_);
-            Game = GamesDA.RetrieveGameByID(gameID_);
-            int supplierID_;
-            Int32.TryParse(supplierID, out supplierID_);
-            Supplier = SuppliersDA.RetrieveSupplierByID(supplierID_);
-            // ID
-            GameID = gameID_;
-            SupplierID = supplierID_;
+            clientID = clientID_;
 
+
+            int objectID_;
+            Int32.TryParse(objectID, out objectID_);
+            objectID = objectID_;
+
+            
+            int managerID_;
+            Int32.TryParse(managerID, out managerID_);
+            managerID = managerID_
         }
 
         private int id;
-        private int quantity;
-        private int gameID;
-        private int supplierID;
-        private Game game;
-        private Supplier supplier;
+        private int clientID;
+        private int objectID;
+        private int managerID;
+        private DateTime startDate;
+        private DateTime endDate;
+        private string status;
 
         public int Id { get => id; set => id = value; }
-        public int Quantity { get => quantity; set => quantity = value; }
-        public int GameID { get => gameID; set => gameID = value; }
-        public int SupplierID { get => supplierID; set => supplierID = value; }
+        public int ClientID { get => clientID; set => clientID = value; }
+        public int ObjectID { get => objectID; set => objectID = value; }
+        public int ManagerID { get => managerID; set => managerID = value; }
+        public DateTime StartDate { get => startDate; set => startDate = value; }
+        public DateTime EndDate { get => endDate; set => endDate = value; }
+        public string Status { get => status; set => status = value; }
 
-        internal Game Game { get => game; set => game = value; }
-        internal Supplier Supplier { get => supplier; set => supplier = value; }
     }
 }
