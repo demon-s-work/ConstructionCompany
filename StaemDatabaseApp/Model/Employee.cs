@@ -10,14 +10,16 @@ namespace StaemDatabaseApp.Model
     public class Employee
     {
 
-        public Employee(string id, string fullName, int positionID, string phone, string email, string login, string password);
+        public Employee(string id, int positionID, string fullName, string phone, string email, string login, string password);
         {
             int id_ = 0;
             Int32.TryParse(id, out id_);
+            int positionID_ = 0;
+            Int32.TryParse(positionID, out positionID_);
 
             Id = id_;
             FullName = fullName;
-            PositionID = positionID;
+            PositionID = positionID_;
             Phone = phone;
             Email = email;
             Login = login;

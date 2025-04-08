@@ -9,21 +9,14 @@ namespace StaemDatabaseApp.Model
 {
     public class Order
     {
-        public Order(int id, int quantity, Game game, Supplier supplier)
-        {
-            Id = id;
-            Quantity = quantity;
-            Game = game;
-            Supplier = supplier;
-        }
 
-        public Order(string id, string quantity, string gameID, string supplierID)
+        public Order(string id, string clientID, string objectID, string managerID, DateTime startDate, DateTime endDate, string Status)
         {
             int id_;
             Int32.TryParse(id, out id_);
             Id = id_;
-            int quantity_;
-            Int32.TryParse(quantity, out quantity_);
+            int clientID_;
+            Int32.TryParse(clientID, out clientID_);
             Quantity = quantity_;
             int gameID_;
             Int32.TryParse(gameID, out gameID_);
