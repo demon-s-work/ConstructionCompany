@@ -29,57 +29,30 @@ namespace StaemDatabaseApp
             InitializeComponent();
         }
 
-        private void showCustomersButton_Click(object sender, RoutedEventArgs e)
+        private void filterButton_Click(object sender, RoutedEventArgs e)
         {
-            customersDataGrid.ItemsSource = ClientsDA.RetrieveAllCustomers();
+
         }
 
-        private void showDevelopersButton_Click(object sender, RoutedEventArgs e)
+        private void ShowClientsButton_OnClick(object sender, RoutedEventArgs e)
         {
-            developersDataGrid.ItemsSource = DevelopersDA.RetrieveAllDevelopers();
+            clientsDataGrid.ItemsSource = ClientsDA.RetrieveAllCustomers();
         }
 
-        private void showGamesButton_Click(object sender, RoutedEventArgs e)
+        private void AddClientButton_OnClick(object sender, RoutedEventArgs e)
         {
-            gamesDataGrid.ItemsSource = GamesDA.RetrieveAllGames();
-        }
-
-        private void showOrdersButton_Click(object sender, RoutedEventArgs e)
-        {
-            ordersDataGrid.ItemsSource = OrderDA.RetrieveAllOrders();
-        }
-
-        private void showReservationsButton_Click(object sender, RoutedEventArgs e)
-        {
-            reservationsDataGrid.ItemsSource = ReservationsDA.RetrieveAllReservations();
-        }
-
-        private void showStatusesButton_Click(object sender, RoutedEventArgs e)
-        {
-            statusesDataGrid.ItemsSource = StatusDA.RetrieveAllStatuses();
-        }
-
-        private void showSuppliersButton_Click(object sender, RoutedEventArgs e)
-        {
-            suppliersDataGrid.ItemsSource = SuppliersDA.RetrieveAllSuppliers();
-        }
-
-        private void addCustomerButton_Click(object sender, RoutedEventArgs e)
-        {
-            Window addCustomerWindow = new AddCustomerWindow();
+            Window addCustomerWindow = new AddClientWindow();
             addCustomerWindow.Owner = this;
             addCustomerWindow.ShowDialog();
-            customersDataGrid.Items.Refresh();
+            clientsDataGrid.Items.Refresh();
         }
 
-        private void removeCustomerButton_Click(object sender, RoutedEventArgs e)
+        private void RemoveClientButton_OnClick(object sender, RoutedEventArgs e)
         {
-            // Get selected index from grid
-
-            Client client = (Client)customersDataGrid.SelectedItem;
+            Client client = (Client)clientsDataGrid.SelectedItem;
 
             if(client == null)
-            { // Typ wiadomosci i ikonka?
+            {
                 MessageBox.Show("Select client first.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
@@ -101,6 +74,7 @@ namespace StaemDatabaseApp
                 {
                     MessageBox.Show("Client was removed successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                     //customersDataGrid.Items.Remove(customersDataGrid.SelectedItem);
+                    ClientsDA.RemoveCustomer(client.Id);
                 }
                 else
                 {
@@ -109,142 +83,105 @@ namespace StaemDatabaseApp
             }
         }
 
-        private void addGameButton_Click(object sender, RoutedEventArgs e)
+        private void ModifyClientButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Window addGameWindow = new AddGameWindow();
-            addGameWindow.Owner = this;
-            addGameWindow.ShowDialog();
-            gamesDataGrid.Items.Refresh();
-        }
+            Client client = (Client)clientsDataGrid.SelectedItem;
 
-        private void removeGameButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Get selected index from grid
-
-            Game game = (Game)gamesDataGrid.SelectedItem;
-
-            if (game == null)
-            { // Typ wiadomosci i ikonka?
-                MessageBox.Show("Select game first.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-                return;
-            }
-
-            // Creating game info
-            StringBuilder sb = new StringBuilder();
-            sb.Append("This action will delete following customer from database!\n");
-            sb.Append("ID: " + game.Id + "\n");
-            sb.Append("Name: " + game.Name + "\n");
-            sb.Append("Developer: " + game.Developer.Name + "\n");
-            sb.Append("Description: " + game.Description + "\n");
-            sb.Append("Quantity: " + game.Quantity + "\n");
-            sb.Append("Price: " + game.Price + "\n");
-            sb.Append("Status: " + game.Status.Name + "\n");
-            sb.Append("\nThis action may not be reversable. Do you want to continue?");
-
-            // Ask if correct game is selected
-            MessageBoxResult result = MessageBox.Show(sb.ToString(), "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-
-            if (result == MessageBoxResult.Yes)
+            if (client == null)
             {
-                bool deleted = GamesDA.RemoveGame(game.Id);
-                if (deleted)
-                {
-                    MessageBox.Show("Game was removed successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
-                    //customersDataGrid.Items.Remove(customersDataGrid.SelectedItem);
-                }
-                else
-                {
-                    MessageBox.Show("An error occuried during this action.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
-        }
-
-        private void modifyGameButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Get selected index from grid
-
-            Game game = (Game)gamesDataGrid.SelectedItem;
-
-            if (game == null)
-            { // Typ wiadomosci i ikonka?
                 MessageBox.Show("Select game first.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
 
-            Window editGameWindow = new EditGameWindow(game);
+            Window editGameWindow = new EditClientWindow(client);
             editGameWindow.Owner = this;
             editGameWindow.ShowDialog();
-            gamesDataGrid.Items.Refresh();
+            clientsDataGrid.Items.Refresh();
         }
 
-        private void sellGameButton_Click(object sender, RoutedEventArgs e)
+        private void FilterClientButton_OnClick(object sender, RoutedEventArgs e)
         {
-            // Get selected index from grid
-
-            Game game = (Game)gamesDataGrid.SelectedItem;
-
-            if (game == null)
-            { // Typ wiadomosci i ikonka?
-                MessageBox.Show("Select game first.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-                return;
-            }
-
-            // Check quantity
-            if (game.Quantity <= 0)
-            {
-                MessageBox.Show("There is no game in stock.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-            // Check status
-            if (String.Equals(game.Status.Name, "Unavailable", StringComparison.OrdinalIgnoreCase))
-            {
-                MessageBox.Show("This game is unavailable currently.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
-            // Try to sell game
-            if (GamesDA.SellGame(game.Id, game.Quantity - 1))
-            {
-
-                // Creating game info
-                StringBuilder sb = new StringBuilder();
-                sb.Append("Game informations:\n");
-                //sb.Append("ID: " + game.Id + "\n");
-                sb.Append("Name: " + game.Name + "\n");
-                //sb.Append("Developer: " + game.Developer.Name + "\n");
-                //sb.Append("Description: " + game.Description + "\n");
-                //sb.Append("Quantity: " + game.Quantity + "\n");
-                sb.Append("Price: " + game.Price + "\n");
-                sb.Append("Status: " + game.Status.Name + "\n");
-                sb.Append("Status price multiplier: " + game.Status.PriceMultiplier + "\n");
-
-                MessageBox.Show(sb.ToString(), "Game sold!", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else
-            {
-                MessageBox.Show("An error occuried during this action.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            throw new NotImplementedException();
         }
 
-        private void addNewOrderButton_Click(object sender, RoutedEventArgs e)
+        private void ShowEmployeesButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Window addOrderWindow = new AddOrderWindow();
-            addOrderWindow.Owner = this;
-            addOrderWindow.ShowDialog();
-            ordersDataGrid.Items.Refresh();
+            throw new NotImplementedException();
         }
 
-        private void addReservation_Click(object sender, RoutedEventArgs e)
+        private void ShowLogsButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Window addReservationWindow = new AddReservationWindow();
-            addReservationWindow.Owner = this;
-            addReservationWindow.ShowDialog();
-            ordersDataGrid.Items.Refresh();
+            throw new NotImplementedException();
         }
 
-        private void filterButton_Click(object sender, RoutedEventArgs e)
+        private void ShowMaterialsButton_OnClick(object sender, RoutedEventArgs e)
         {
+            throw new NotImplementedException();
+        }
 
+        private void ShowObjectsButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AddEmployeeButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void RemoveEmployeeButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ModifyEmployeeButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AddLogButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void RemoveLogButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ModifyLogButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AddMaterialButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void RemoveMaterialButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ModifyMaterialButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AddObjectButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void RemoveObjectButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ModifyObjectButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

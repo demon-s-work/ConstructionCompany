@@ -12,175 +12,174 @@
         ResizeMode="NoResize">
     <Grid>
         <TabControl x:Name="tabControl">
-            <TabItem Header="Customers">
+            <TabItem Header="Clients">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="145*" />
                         <ColumnDefinition Width="649*" />
                     </Grid.ColumnDefinitions>
                     <StackPanel Margin="10">
-                        <Button x:Name="showCustomersButton"
-                                Content="Show Customers"
+                        <Button x:Name="showClientsButton"
+                                Content="Show Clients"
                                 Margin="5"
                                 VerticalAlignment="Center"
-                                Click="showCustomersButton_Click" />
-                        <Button x:Name="addCustomerButton"
+                                Click="ShowClientsButton_OnClick" />
+                        <Button x:Name="addClientButton"
                                 Content="Add Client"
                                 Margin="5"
-                                VerticalAlignment="Center" Click="addCustomerButton_Click" />
-                        <Button x:Name="removeCustomerButton"
-                            Content="Remove Client"
+                                VerticalAlignment="Center" Click="AddClientButton_OnClick" />
+                        <Button x:Name="removeClientButton"
+                                Content="Remove Client"
+                                Margin="5"
+                                VerticalAlignment="Center" Click="RemoveClientButton_OnClick" />
+                        <Button x:Name="modifyClientButton"
+                                Content="Modify Client"
+                                Margin="5"
+                                VerticalAlignment="Center" Click="ModifyClientButton_OnClick" />
+                        <Button x:Name="filterClientButton"
+                            Content="Apply filter"
                             Margin="5"
-                            VerticalAlignment="Center" Click="removeCustomerButton_Click" />
+                            VerticalAlignment="Center" Click="FilterClientButton_OnClick"/>
                     </StackPanel>
-                    <DataGrid x:Name="customersDataGrid"
-                              Grid.Column="1"
+                    <DataGrid x:Name="clientsDataGrid"
+                              Grid.Column="5"
                               Margin="5" />
                 </Grid>
             </TabItem>
-            <TabItem Header="Developers">
+            <TabItem Header="Employees">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="145*" />
                         <ColumnDefinition Width="649*" />
                     </Grid.ColumnDefinitions>
                     <StackPanel Margin="10">
-                        <Button x:Name="showDevelopersButton"
-                                Content="Show Developers"
-                                Margin="5"
-                                VerticalAlignment="Center"
-                                Click="showDevelopersButton_Click" />
-                        <Button x:Name="button3"
-                                Content="..."
-                                Margin="5"
-                                VerticalAlignment="Center" />
-                    </StackPanel>
-                    <DataGrid x:Name="developersDataGrid"
-                              Grid.Column="2"
-                              Margin="5" />
-                </Grid>
-            </TabItem>
-            <TabItem Header="Games">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="145*" />
-                        <ColumnDefinition Width="649*" />
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Margin="10">
-                        <Button x:Name="showGamesButton"
+                        <Button x:Name="showEmployeesButton"
                                 Content="Show Games"
                                 Margin="5"
                                 VerticalAlignment="Center"
-                                Click="showGamesButton_Click" />
-                        <Button x:Name="addGameButton"
+                                Click="ShowEmployeesButton_OnClick" />
+                        <Button x:Name="addEmployeeButton"
                                 Content="Add Game"
                                 Margin="5"
-                                VerticalAlignment="Center" Click="addGameButton_Click" />
-                        <Button x:Name="removeGameButton"
+                                VerticalAlignment="Center" Click="AddEmployeeButton_OnClick" />
+                        <Button x:Name="removeEmployeeButton"
                                 Content="Remove Game"
                                 Margin="5"
-                                VerticalAlignment="Center" Click="removeGameButton_Click" />
-                        <Button x:Name="modifyGameButton"
+                                VerticalAlignment="Center" Click="RemoveEmployeeButton_OnClick" />
+                        <Button x:Name="modifyEmployeeButton"
                                 Content="Modify Game"
                                 Margin="5"
-                                VerticalAlignment="Center" Click="modifyGameButton_Click" />
-                        <Button x:Name="filterButton"
+                                VerticalAlignment="Center" Click="ModifyEmployeeButton_OnClick" />
+                        <Button x:Name="filterEmployeeButton"
                             Content="Apply filter"
                             Margin="5"
                             VerticalAlignment="Center" Click="filterButton_Click"/>
                     </StackPanel>
-                    <DataGrid x:Name="gamesDataGrid"
-                              Grid.Column="2"
+                    <DataGrid x:Name="employeeDataGrid"
+                              Grid.Column="7"
                               Margin="5" />
                 </Grid>
             </TabItem>
-            <TabItem Header="Orders">
+            <TabItem Header="Logs">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="145*" />
                         <ColumnDefinition Width="649*" />
                     </Grid.ColumnDefinitions>
                     <StackPanel Margin="10">
-                        <Button x:Name="showOrdersButton"
-                                Content="Show Orders"
+                        <Button x:Name="showLogsButton"
+                                Content="Show Games"
                                 Margin="5"
                                 VerticalAlignment="Center"
-                                Click="showOrdersButton_Click" />
-                        <Button x:Name="addNewOrderButton"
-                                Content="Add New Order"
+                                Click="ShowLogsButton_OnClick" />
+                        <Button x:Name="addLogButton"
+                                Content="Add Game"
                                 Margin="5"
-                                VerticalAlignment="Center" Click="addNewOrderButton_Click" />
+                                VerticalAlignment="Center" Click="AddLogButton_OnClick" />
+                        <Button x:Name="removeLogButton"
+                                Content="Remove Game"
+                                Margin="5"
+                                VerticalAlignment="Center" Click="RemoveLogButton_OnClick" />
+                        <Button x:Name="modifyLogButton"
+                                Content="Modify Game"
+                                Margin="5"
+                                VerticalAlignment="Center" Click="ModifyLogButton_OnClick" />
+                        <Button x:Name="filterLogsButton"
+                            Content="Apply filter"
+                            Margin="5"
+                            VerticalAlignment="Center" Click="filterButton_Click"/>
                     </StackPanel>
-                    <DataGrid x:Name="ordersDataGrid"
-                              Grid.Column="1"
+                    <DataGrid x:Name="logsDataGrip"
+                              Grid.Column="4"
                               Margin="5" />
                 </Grid>
             </TabItem>
-            <TabItem Header="Reservations">
+            <TabItem Header="Materials">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="145*" />
                         <ColumnDefinition Width="649*" />
                     </Grid.ColumnDefinitions>
                     <StackPanel Margin="10">
-                        <Button x:Name="showReservationsButton"
-                                Content="Show Reservations"
+                        <Button x:Name="showMaterialsButton"
+                                Content="Show Games"
                                 Margin="5"
                                 VerticalAlignment="Center"
-                                Click="showReservationsButton_Click" />
-                        <Button x:Name="addReservation"
-                                Content="Add Reservation"
+                                Click="ShowMaterialsButton_OnClick" />
+                        <Button x:Name="addMaterialButton"
+                                Content="Add Game"
                                 Margin="5"
-                                VerticalAlignment="Center" Click="addReservation_Click" />
+                                VerticalAlignment="Center" Click="AddMaterialButton_OnClick" />
+                        <Button x:Name="removeMaterialButton"
+                                Content="Remove Game"
+                                Margin="5"
+                                VerticalAlignment="Center" Click="RemoveMaterialButton_OnClick" />
+                        <Button x:Name="modifyMaterialButton"
+                                Content="Modify Game"
+                                Margin="5"
+                                VerticalAlignment="Center" Click="ModifyMaterialButton_OnClick" />
+                        <Button x:Name="filterMaterialsButton"
+                            Content="Apply filter"
+                            Margin="5"
+                            VerticalAlignment="Center" Click="filterButton_Click"/>
                     </StackPanel>
-                    <DataGrid x:Name="reservationsDataGrid"
-                              Grid.Column="1"
+                    <DataGrid x:Name="materialsDataGrid"
+                              Grid.Column="5"
                               Margin="5" />
                 </Grid>
             </TabItem>
-            <TabItem Header="Statuses">
+            <TabItem Header="Objects">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="145*" />
                         <ColumnDefinition Width="649*" />
                     </Grid.ColumnDefinitions>
                     <StackPanel Margin="10">
-                        <Button x:Name="showStatusesButton"
-                                Content="Show Statuses"
+                        <Button x:Name="showObjectsButton"
+                                Content="Show Games"
                                 Margin="5"
                                 VerticalAlignment="Center"
-                                Click="showStatusesButton_Click" />
-                        <Button x:Name="button7"
-                                Content="..."
+                                Click="ShowObjectsButton_OnClick" />
+                        <Button x:Name="addObjectButton"
+                                Content="Add Game"
                                 Margin="5"
-                                VerticalAlignment="Center" />
+                                VerticalAlignment="Center" Click="AddObjectButton_OnClick" />
+                        <Button x:Name="removeObjectButton"
+                                Content="Remove Game"
+                                Margin="5"
+                                VerticalAlignment="Center" Click="RemoveObjectButton_OnClick" />
+                        <Button x:Name="modifyObjectButton"
+                                Content="Modify Game"
+                                Margin="5"
+                                VerticalAlignment="Center" Click="ModifyObjectButton_OnClick" />
+                        <Button x:Name="filterObjectsButton"
+                            Content="Apply filter"
+                            Margin="5"
+                            VerticalAlignment="Center" Click="filterButton_Click"/>
                     </StackPanel>
-                    <DataGrid x:Name="statusesDataGrid"
-                              Grid.Column="1"
-                              Margin="5"
-                              Grid.ColumnSpan="2" />
-                </Grid>
-            </TabItem>
-            <TabItem Header="Suppliers">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="145*" />
-                        <ColumnDefinition Width="649*" />
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Margin="10">
-                        <Button x:Name="showSuppliersButton"
-                                Content="Show Suppliers"
-                                Margin="5"
-                                VerticalAlignment="Center" Click="showSuppliersButton_Click" />
-                        <Button x:Name="button2"
-                                Content="..."
-                                Margin="5"
-                                VerticalAlignment="Center" />
-                    </StackPanel>
-                    <DataGrid x:Name="suppliersDataGrid"
-                              Grid.Column="1"
-                              Margin="5"
-                              Grid.ColumnSpan="3" />
+                    <DataGrid x:Name="objectsDataGrid"
+                              Grid.Column="4"
+                              Margin="5" />
                 </Grid>
             </TabItem>
             <Button Content="Button" Height="27" Width="82"/>

@@ -146,7 +146,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="ViewLayer\AddCustomerWindow.xaml">
+    <Page Include="ViewLayer\AddClientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -155,6 +155,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ViewLayer\AddOrderWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewLayer\EditClientWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -193,14 +197,17 @@
     <Compile Include="Model\Reservation.cs" />
     <Compile Include="Model\Status.cs" />
     <Compile Include="Model\Supplier.cs" />
-    <Compile Include="ViewLayer\AddCustomerWindow.xaml.cs">
-      <DependentUpon>AddCustomerWindow.xaml</DependentUpon>
+    <Compile Include="ViewLayer\AddClientWindow.xaml.cs">
+      <DependentUpon>AddClientWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewLayer\AddReservationWindow.xaml.cs">
       <DependentUpon>AddReservationWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewLayer\AddOrderWindow.xaml.cs">
       <DependentUpon>AddOrderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLayer\EditClientWindow.xaml.cs">
+      <DependentUpon>EditClientWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewLayer\EditGameWindow.xaml.cs">
       <DependentUpon>EditGameWindow.xaml</DependentUpon>

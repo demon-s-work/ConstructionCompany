@@ -18,9 +18,9 @@ namespace StaemDatabaseApp.ViewLayer
     /// <summary>
     /// Interaction logic for AddCustomer.xaml
     /// </summary>
-    public partial class AddCustomerWindow : Window
+    public partial class AddClientWindow : Window
     {
-        public AddCustomerWindow()
+        public AddClientWindow()
         {
             InitializeComponent();
         }

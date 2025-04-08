@@ -61,6 +61,21 @@ namespace StaemDatabaseApp.DBLayer
             }
             return client;
         }
+        
+        public static bool EditClient(string fullName, string phone, string email, string address, int id)
+        {
+            string query = "UPDATE ConstructionCompany.Clients SET FullName=@FullName,Phone=@phone,Email=@Email,Address=@Address WHERE ClientID=@ID;";
+
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters.Add("@FullName", fullName);
+            parameters.Add("@Phone", phone);
+            parameters.Add("@Email", email);
+            parameters.Add("@Address", address);
+            parameters.Add("@ID", id.ToString());
+            cmd = DBHelper.RunQueryWithParamList(query, parameters);
+
+            return cmd != null;
+        }
 
         public static bool addCustomer(string fullName, string phone, string email, string address)
         {
@@ -74,7 +89,7 @@ namespace StaemDatabaseApp.DBLayer
 
         public static bool RemoveCustomer(int id)
         {
-            string query = "DELETE FROM staem.Customers WHERE ID = (@ID)";
+            string query = "DELETE FROM ConstructionCompany.Clients WHERE ClientID = (@ID)";
             cmd = DBHelper.RunQueryWithID(query, id);
             return cmd != null;
         }
