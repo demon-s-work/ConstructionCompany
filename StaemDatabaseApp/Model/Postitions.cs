@@ -10,7 +10,7 @@ namespace StaemDatabaseApp.Model
     public class Positions
     {
 
-        public Positions(string id, string Title, decimal Salary, int AccessLevel)
+        public Positions(string id, string Title, decimal salary, int accessLevel)
         {
             int id_ = 0;
             Int32.TryParse(id, out id_);
@@ -23,12 +23,12 @@ namespace StaemDatabaseApp.Model
 
         private int id;
         private string title;
-        private string salary;
-        private string accessLevel;
+        private decimal salary;
+        private int accessLevel;
 
         public string Title { get => title; set => title = value; }
-        public string Salary { get => salary; set => salary = value; }
-        public string AccessLevel { get => accessLevel; set => accessLevel = value; }
+        public decimal Salary { get => salary; set => salary = value; }
+        public int AccessLevel { get => accessLevel; set => accessLevel = value; }
         public int Id { get => id; set => id = value; }
 
         public override string ToString()
