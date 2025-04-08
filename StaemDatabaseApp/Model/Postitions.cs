@@ -10,7 +10,7 @@ namespace StaemDatabaseApp.Model
     public class Positions
     {
 
-        public Positions(string id, string Title, decimal salary, int accessLevel)
+        public Positions(string id, string title, decimal salary, int accessLevel)
         {
             int id_ = 0;
             Int32.TryParse(id, out id_);
