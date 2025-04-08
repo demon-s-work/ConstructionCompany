@@ -31,7 +31,7 @@ namespace StaemDatabaseApp
 
         private void showCustomersButton_Click(object sender, RoutedEventArgs e)
         {
-            customersDataGrid.ItemsSource = CustomersDA.RetrieveAllCustomers();
+            customersDataGrid.ItemsSource = ClientsDA.RetrieveAllCustomers();
         }
 
         private void showDevelopersButton_Click(object sender, RoutedEventArgs e)
@@ -76,33 +76,30 @@ namespace StaemDatabaseApp
         {
             // Get selected index from grid
 
-            Customer customer = (Customer)customersDataGrid.SelectedItem;
+            Client client = (Client)customersDataGrid.SelectedItem;
 
-            if(customer == null)
+            if(client == null)
             { // Typ wiadomosci i ikonka?
-                MessageBox.Show("Select customer first.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Select client first.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
 
-            // Creating customer info
+            // Creating client info
             StringBuilder sb = new StringBuilder();
-            sb.Append("This action will delete following customer from database!\n");
-            sb.Append("ID: " + customer.Id + "\n");
-            sb.Append("Name: " + customer.Name +"\n");
-            sb.Append("Surname: " + customer.Surname + "\n");
-            sb.Append("Price Multiplier: " + customer.PriceMultiplier + "\n");
-            sb.Append("Games bought: " + customer.GamesBought + "\n");
+            sb.Append("This action will delete following client from database!\n");
+            sb.Append("ID: " + client.Id + "\n");
+            sb.Append("Name: " + client.FullName +"\n");
             sb.Append("\nThis action may not be reversable. Do you want to continue?");
 
-            // Ask if correct customer is selected
+            // Ask if correct client is selected
             MessageBoxResult result = MessageBox.Show(sb.ToString(), "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
             if (result == MessageBoxResult.Yes)
             {
-                bool deleted = CustomersDA.RemoveCustomer(customer.Id);
+                bool deleted = ClientsDA.RemoveCustomer(client.Id);
                 if (deleted)
                 {
-                    MessageBox.Show("Customer was removed successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Client was removed successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                     //customersDataGrid.Items.Remove(customersDataGrid.SelectedItem);
                 }
                 else

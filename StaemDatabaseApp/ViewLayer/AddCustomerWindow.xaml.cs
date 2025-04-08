@@ -30,21 +30,21 @@ namespace StaemDatabaseApp.ViewLayer
             // Verify customer data
             if(customerNameTextBox.Text.Length == 0)
             {
-                MessageBox.Show("Customer name cannot be empty", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Client name cannot be empty", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             if (customerSurnameTextBox.Text.Length == 0)
             {
-                MessageBox.Show("Customer surname cannot be empty", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Client surname cannot be empty", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
-            // Customer data is correct
+            // Client data is correct
             // Inserting to database
-            bool answer = CustomersDA.addCustomer(customerNameTextBox.Text, customerSurnameTextBox.Text, customerPriceMultiplierTextBox.Text, CustomerGamesBoughtTextBox.Text);
+            bool answer = ClientsDA.addCustomer(customerNameTextBox.Text, customerSurnameTextBox.Text, customerPriceMultiplierTextBox.Text, CustomerGamesBoughtTextBox.Text);
             if (answer)
             {
-                MessageBox.Show("Customer was added successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Client was added successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 Close();
             }
             else

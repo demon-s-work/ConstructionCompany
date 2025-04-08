@@ -29,7 +29,7 @@ namespace StaemDatabaseApp.ViewLayer
             gameComboBox.ItemsSource = GamesDA.RetrieveAllGames();
             gameComboBox.SelectedIndex = 0;
 
-            customerComboBox.ItemsSource = CustomersDA.RetrieveAllCustomers();
+            customerComboBox.ItemsSource = ClientsDA.RetrieveAllCustomers();
             customerComboBox.SelectedIndex = 0;
         }
 
@@ -46,12 +46,12 @@ namespace StaemDatabaseApp.ViewLayer
             }
 
 
-            //Retrieve customer and game
+            //Retrieve client and game
             Game game = (Game)gameComboBox.SelectedItem;
-            Customer customer = (Customer)customerComboBox.SelectedItem;
+            Client client = (Client)customerComboBox.SelectedItem;
 
 
-            bool answer = ReservationsDA.AddReservation(date, game.Id, customer.Id);
+            bool answer = ReservationsDA.AddReservation(date, game.Id, client.Id);
             if (answer)
             {
                 MessageBox.Show("Reservation was added successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);

@@ -12,13 +12,13 @@
                HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="35" Margin="10,10,0,0" VerticalAlignment="Top" Width="334" FontSize="18" FontWeight="SemiBold" TextOptions.TextFormattingMode="Display"/>
         <Grid HorizontalAlignment="Left" Height="140" Margin="30,50,0,0" VerticalAlignment="Top" Width="294">
             <TextBox x:Name="customerNameTextBox" HorizontalAlignment="Left" Height="20" Margin="116,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" />
-            <Label Content="Surname:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="24" Margin="11,39,0,0" VerticalAlignment="Top" Width="100"/>
+            <Label Content="Phone:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="24" Margin="11,39,0,0" VerticalAlignment="Top" Width="100"/>
             <TextBox x:Name="customerSurnameTextBox" HorizontalAlignment="Left" Height="20" Margin="116,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
-            <Label Content="Name:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="24" Margin="11,14,0,0" VerticalAlignment="Top" Width="100"/>
-            <Label Content="Discount:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="24" Margin="11,81,0,0" VerticalAlignment="Top" Width="100"/>
-            <TextBox x:Name="customerPriceMultiplierTextBox" HorizontalAlignment="Left" Height="20" Margin="116,85,0,0" TextWrapping="Wrap" Text="1.000" VerticalAlignment="Top" Width="168" IsEnabled="False"/>
-            <Label Content="Games bought:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="33" Margin="11,106,0,0" VerticalAlignment="Top" Width="100"/>
-            <TextBox x:Name="CustomerGamesBoughtTextBox" HorizontalAlignment="Left" Height="20" Margin="116,110,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="168" IsEnabled="False"/>
+            <Label Content="FullName:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="24" Margin="11,14,0,0" VerticalAlignment="Top" Width="100"/>
+            <Label Content="Email:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="24" Margin="11,81,0,0" VerticalAlignment="Top" Width="100"/>
+            <TextBox x:Name="customerPriceMultiplierTextBox" HorizontalAlignment="Left" Height="20" Margin="116,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
+            <Label Content="Address:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="33" Margin="11,106,0,0" VerticalAlignment="Top" Width="100"/>
+            <TextBox x:Name="CustomerGamesBoughtTextBox" HorizontalAlignment="Left" Height="20" Margin="116,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
         </Grid>
         <Button x:Name="addButton" Content="Add" Height="31" Margin="110,207,109.6,0" VerticalAlignment="Top" Click="addButton_Click" Grid.ColumnSpan="2"/>
 

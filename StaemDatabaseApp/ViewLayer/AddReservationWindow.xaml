@@ -14,7 +14,7 @@
                 <ColumnDefinition Width="107*"/>
             </Grid.ColumnDefinitions>
             <Label Content="Date:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="27" Margin="10,10,0,0" VerticalAlignment="Top" Width="80"/>
-            <Label Content="Customer:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="27" Margin="10,78,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.529,2.4"/>
+            <Label Content="Client:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="27" Margin="10,78,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.529,2.4"/>
             <Label Content="Game:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="27" Margin="10,46,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.529,2.4"/>
             <ComboBox x:Name="gameComboBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" VerticalAlignment="Top" Width="194"/>
             <ComboBox x:Name="customerComboBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,78,0,0" VerticalAlignment="Top" Width="194"/>

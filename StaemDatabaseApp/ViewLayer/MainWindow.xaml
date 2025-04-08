@@ -25,11 +25,11 @@
                                 VerticalAlignment="Center"
                                 Click="showCustomersButton_Click" />
                         <Button x:Name="addCustomerButton"
-                                Content="Add Customer"
+                                Content="Add Client"
                                 Margin="5"
                                 VerticalAlignment="Center" Click="addCustomerButton_Click" />
                         <Button x:Name="removeCustomerButton"
-                            Content="Remove Customer"
+                            Content="Remove Client"
                             Margin="5"
                             VerticalAlignment="Center" Click="removeCustomerButton_Click" />
                     </StackPanel>
@@ -84,10 +84,6 @@
                                 Content="Modify Game"
                                 Margin="5"
                                 VerticalAlignment="Center" Click="modifyGameButton_Click" />
-                        <Button x:Name="sellGameButton"
-                                Content="Sell Game"
-                                Margin="5"
-                                VerticalAlignment="Center" Click="sellGameButton_Click" />
                         <Button x:Name="filterButton"
                             Content="Apply filter"
                             Margin="5"
