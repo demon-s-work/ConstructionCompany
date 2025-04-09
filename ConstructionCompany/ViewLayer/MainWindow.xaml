@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StaemDatabaseApp"
         mc:Ignorable="d"
-        Title="Staem"
+        Title="ConstructionCompany"
         Height="450"
         Width="800"
         WindowStartupLocation="CenterScreen"
@@ -106,20 +106,20 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Margin="10">
                         <Button x:Name="showMaterialsButton"
-                                Content="Show Games"
+                                Content="Show Materials"
                                 Margin="5"
                                 VerticalAlignment="Center"
                                 Click="ShowMaterialsButton_OnClick" />
                         <Button x:Name="addMaterialButton"
-                                Content="Add Game"
+                                Content="Add Material"
                                 Margin="5"
                                 VerticalAlignment="Center" Click="AddMaterialButton_OnClick" />
                         <Button x:Name="removeMaterialButton"
-                                Content="Remove Game"
+                                Content="Remove Material"
                                 Margin="5"
                                 VerticalAlignment="Center" Click="RemoveMaterialButton_OnClick" />
                         <Button x:Name="modifyMaterialButton"
-                                Content="Modify Game"
+                                Content="Modify Material"
                                 Margin="5"
                                 VerticalAlignment="Center" Click="ModifyMaterialButton_OnClick" />
                         <Button x:Name="filterMaterialsButton"
@@ -196,6 +196,40 @@
                             VerticalAlignment="Center" Click="filterButton_Click"/>
                     </StackPanel>
                     <DataGrid x:Name="positionsDataGrid"
+                              Grid.Column="4"
+                              Margin="5" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Orders">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="145*" />
+                        <ColumnDefinition Width="649*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="10">
+                        <Button x:Name="showOrdersButton"
+                                Content="Show Orders"
+                                Margin="5"
+                                VerticalAlignment="Center"
+                                Click="ShowOrdersButton_OnClick" />
+                        <Button x:Name="addOrderButton"
+                                Content="Add Order"
+                                Margin="5"
+                                VerticalAlignment="Center" Click="AddOrderButton_OnClick" />
+                        <Button x:Name="removeOrderButton"
+                                Content="Remove Order"
+                                Margin="5"
+                                VerticalAlignment="Center" Click="RemoveOrderButton_OnClick" />
+                        <Button x:Name="modifyOrderButton"
+                                Content="Modify Order"
+                                Margin="5"
+                                VerticalAlignment="Center" Click="ModifyOrderButton_OnClick" />
+                        <Button x:Name="filterOrderButton"
+                            Content="Apply filter"
+                            Margin="5"
+                            VerticalAlignment="Center" Click="filterButton_Click"/>
+                    </StackPanel>
+                    <DataGrid x:Name="ordersDataGrid"
                               Grid.Column="4"
                               Margin="5" />
                 </Grid>

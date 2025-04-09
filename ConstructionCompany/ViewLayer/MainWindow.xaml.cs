@@ -117,7 +117,7 @@ namespace StaemDatabaseApp
 
 		private void ShowMaterialsButton_OnClick(object sender, RoutedEventArgs e)
 		{
-			throw new NotImplementedException();
+			materialsDataGrid.ItemsSource = MaterialsDA.RetrieveAllMaterials();
 		}
 
 		private void ShowObjectsButton_OnClick(object sender, RoutedEventArgs e)
@@ -202,17 +202,62 @@ namespace StaemDatabaseApp
 
 		private void AddMaterialButton_OnClick(object sender, RoutedEventArgs e)
 		{
-			throw new NotImplementedException();
+			Window addCustomerWindow = new AddMaterialsWindow();
+			addCustomerWindow.Owner = this;
+			addCustomerWindow.ShowDialog();
+			clientsDataGrid.Items.Refresh();
 		}
 
 		private void RemoveMaterialButton_OnClick(object sender, RoutedEventArgs e)
 		{
-			throw new NotImplementedException();
+			var material = (Material)materialsDataGrid.SelectedItem;
+
+			if(material == null)
+			{
+				MessageBox.Show("Select client first.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+				return;
+			}
+
+			// Creating client info
+			StringBuilder sb = new StringBuilder();
+			sb.Append("This action will delete following client from database!\n");
+			sb.Append("ID: " + material.Id + "\n");
+			sb.Append("Name: " + material.Title +"\n");
+			sb.Append("\nThis action may not be reversable. Do you want to continue?");
+
+			// Ask if correct client is selected
+			MessageBoxResult result = MessageBox.Show(sb.ToString(), "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+			if (result == MessageBoxResult.Yes)
+			{
+				bool deleted = ClientsDA.RemoveCustomer(material.Id);
+				if (deleted)
+				{
+					MessageBox.Show("Client was removed successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+					//customersDataGrid.Items.Remove(customersDataGrid.SelectedItem);
+					MaterialsDA.RemoveMaterial(material.Id);
+				}
+				else
+				{
+					MessageBox.Show("An error occuried during this action.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+				}
+			}
 		}
 
 		private void ModifyMaterialButton_OnClick(object sender, RoutedEventArgs e)
 		{
-			throw new NotImplementedException();
+			var material = (Material)materialsDataGrid.SelectedItem;
+
+			if (material == null)
+			{
+				MessageBox.Show("Select game first.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+				return;
+			}
+
+			Window editGameWindow = new EditMaterialsWindow(material);
+			editGameWindow.Owner = this;
+			editGameWindow.ShowDialog();
+			clientsDataGrid.Items.Refresh();
 		}
 
 		private void AddObjectButton_OnClick(object sender, RoutedEventArgs e)
@@ -339,6 +384,25 @@ namespace StaemDatabaseApp
 			editGameWindow.Owner = this;
 			editGameWindow.ShowDialog();
 			clientsDataGrid.Items.Refresh();
+		}
+
+		private void ShowOrdersButton_OnClick(object sender, RoutedEventArgs e)
+		{
+			ordersDataGrid.ItemsSource = OrdersDA.RetrieveAllOrders();
+		}
+
+		private void AddOrderButton_OnClick(object sender, RoutedEventArgs e)
+		{
+		}
+
+		private void RemoveOrderButton_OnClick(object sender, RoutedEventArgs e)
+		{
+			throw new NotImplementedException();
+		}
+
+		private void ModifyOrderButton_OnClick(object sender, RoutedEventArgs e)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

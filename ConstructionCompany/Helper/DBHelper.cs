@@ -19,7 +19,7 @@ namespace StaemDatabaseApp.Helper
         public static bool ConnectToDatabase(string login, string password)
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
-            builder.Server = "localhost";
+            builder.Server = "192.168.0.134";
             builder.UserID = login;
             builder.Password = password;
             builder.Database = "ConstructionCompany";
@@ -70,6 +70,7 @@ namespace StaemDatabaseApp.Helper
             }
             catch (Exception ex)
             {
+                throw ex;
                 connection.Close();
             }
             return cmd;

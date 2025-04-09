@@ -29,7 +29,7 @@ namespace StaemDatabaseApp.ViewLayer
         {
             string login = usernameTextBox.Text;
             string password = passwordTextBox.Password;
-            if (DBHelper.ConnectToDatabase(login, password))
+            if (DBHelper.ConnectToDatabase("root", "pass123"))
             {
                 Window mainWindow = new MainWindow();
                 mainWindow.Show();
