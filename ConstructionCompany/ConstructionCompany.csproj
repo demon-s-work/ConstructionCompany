@@ -150,6 +150,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ViewLayer\AddMaterialsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="ViewLayer\AddObjectWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -209,6 +213,9 @@
     <Compile Include="Model\WorkType.cs" />
     <Compile Include="ViewLayer\AddClientWindow.xaml.cs">
       <DependentUpon>AddClientWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLayer\AddMaterialsWindow.xaml.cs">
+      <DependentUpon>AddMaterialsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewLayer\AddObjectWindow.xaml.cs">
       <DependentUpon>AddObjectWindow.xaml</DependentUpon>
