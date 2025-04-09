@@ -170,6 +170,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="ViewLayer\EditMaterialsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="ViewLayer\EditObjecrtWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -228,6 +232,9 @@
     </Compile>
     <Compile Include="ViewLayer\EditClientWindow.xaml.cs">
       <DependentUpon>EditClientWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLayer\EditMaterialsWindow.xaml.cs">
+      <DependentUpon>EditMaterialsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewLayer\EditObjecrtWindow.xaml.cs">
       <DependentUpon>EditObjecrtWindow.xaml</DependentUpon>
