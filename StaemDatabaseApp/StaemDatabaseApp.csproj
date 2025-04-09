@@ -166,6 +166,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="ViewLayer\EditObjecrtWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="ViewLayer\EditEmployeeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -214,6 +218,9 @@
     </Compile>
     <Compile Include="ViewLayer\EditClientWindow.xaml.cs">
       <DependentUpon>EditClientWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLayer\EditObjecrtWindow.xaml.cs">
+      <DependentUpon>EditObjecrtWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewLayer\EditEmployeeWindow.xaml.cs">
       <DependentUpon>EditEmployeeWindow.xaml</DependentUpon>
