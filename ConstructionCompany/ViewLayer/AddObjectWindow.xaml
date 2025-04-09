@@ -18,7 +18,7 @@
             <Label Content="Type:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="24" Margin="11,81,0,0" VerticalAlignment="Top" Width="100"/>
             <ComboBox x:Name="ObjectTypeComboBox" HorizontalAlignment="Left" Height="20" Margin="116,85,0,0" VerticalAlignment="Top" Width="168">
                 <ComboBoxItem>Квартира</ComboBoxItem>
-                <ComboBoxItem>Дом</ComboBoxItem>
+                <ComboBoxItem>Частный дом</ComboBoxItem>
                 <ComboBoxItem>Офис</ComboBoxItem>
                 <ComboBoxItem>Гараж</ComboBoxItem>
             </ComboBox>

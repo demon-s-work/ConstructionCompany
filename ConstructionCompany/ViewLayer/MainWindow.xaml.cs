@@ -102,7 +102,6 @@ namespace StaemDatabaseApp
 
 		private void FilterClientButton_OnClick(object sender, RoutedEventArgs e)
 		{
-			throw new NotImplementedException();
 		}
 
 		private void ShowEmployeesButton_OnClick(object sender, RoutedEventArgs e)
