@@ -36,7 +36,7 @@ namespace StaemDatabaseApp.DBLayer
             return allEmployees;
         }
 
-        public static bool EditMaterial(int id, string title, string unit,decimal price, int stockQuantity)
+        public static bool EditMaterial(int id, string title, string unit,decimal price, decimal stockQuantity)
         {
             string query = "UPDATE ConstructionCompany.Materials SET Title=@Title,Unit=@Unit,Price=@Price,StockQuantity=@StockQuantity WHERE MaterialID=@ID;";
 
