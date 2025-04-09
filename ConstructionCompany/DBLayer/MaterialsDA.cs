@@ -52,10 +52,10 @@ namespace StaemDatabaseApp.DBLayer
             return cmd != null;
         }
 
-        public static bool addMaterial(string title, string unit,decimal price, int stockQuantity)
+        public static bool addMaterial(string title, string unit,decimal price, decimal stockQuantity)
         {
             string query = "INSERT INTO `ConstructionCompany`.`Materials` (`Title`, `Unit`, `Price`, `StockQuantity`, )" +
-                "VALUES ('" + title + "', '" + unit + "', '" + price.ToString().Replace(',','.') + "', '" + stockQuantity.ToString() + "');";
+                "VALUES ('" + title + "', '" + unit + "', '" + price.ToString().Replace(',','.') + "', '" + stockQuantity.ToString().Replace(',','.') + "');";
             cmd = DBHelper.RunQueryNoParameters(query);
             return cmd != null;
         }
