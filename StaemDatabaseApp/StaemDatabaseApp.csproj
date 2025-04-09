@@ -190,7 +190,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DBLayer\EmployeeDA.cs" />
+    <Compile Include="DBLayer\EmployeesDA.cs" />
+    <Compile Include="DBLayer\ObjectsDA.cs" />
     <Compile Include="DBLayer\PositionsDA.cs" />
     <Compile Include="DBLayer\ClientsDA.cs" />
     <Compile Include="Helper\DBHelper.cs" />

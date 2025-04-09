@@ -16,7 +16,13 @@
             <Label Content="Address:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="24" Margin="11,58,0,0" VerticalAlignment="Top" Width="100"/>
             <TextBox x:Name="ObjectAddressTextBox" HorizontalAlignment="Left" Height="20" Margin="116,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
             <Label Content="Type:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="24" Margin="11,81,0,0" VerticalAlignment="Top" Width="100"/>
-            <TextBox x:Name="ObjectTypeTextBox" HorizontalAlignment="Left" Height="20" Margin="116,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
+            <ComboBox x:Name="ObjectTypeComboBox" HorizontalAlignment="Left" Height="20" Margin="116,85,0,0" VerticalAlignment="Top" Width="168">
+                <ComboBoxItem>Квартира</ComboBoxItem>
+                <ComboBoxItem>Дом</ComboBoxItem>
+                <ComboBoxItem>Офис</ComboBoxItem>
+                <ComboBoxItem>Гараж</ComboBoxItem>
+            </ComboBox>
+            <TextBox x:Name="ObjectTypeTextBox" HorizontalAlignment="Left" Height="20" Margin="116,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" Visibility="Hidden"/>
         </Grid>
         <Button x:Name="addButton" Content="Add" Height="31" Margin="110,257,109.6,0" VerticalAlignment="Top" Click="addButton_Click" Grid.ColumnSpan="2"/>
 

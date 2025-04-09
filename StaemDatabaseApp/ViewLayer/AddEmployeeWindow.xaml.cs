@@ -36,7 +36,7 @@ namespace StaemDatabaseApp.ViewLayer
             
             // Employee data is correct
             // Inserting to database
-            bool answer = EmployeeDA.addEmployee(EmployeeNameTextBox.Text, EmployeePhoneTextBox.Text, EmployeeEmailTextBox.Text, EmployeeLoginTextBox.Text, EmployeePasswordTextBox.Text
+            bool answer = EmployeesDA.addEmployee(EmployeeNameTextBox.Text, EmployeePhoneTextBox.Text, EmployeeEmailTextBox.Text, EmployeeLoginTextBox.Text, EmployeePasswordTextBox.Text
                 , int.Parse(EmployeePositionIdTextBox.Text));
             if (answer)
             {

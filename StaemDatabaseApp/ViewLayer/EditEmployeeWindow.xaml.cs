@@ -36,7 +36,7 @@ namespace StaemDatabaseApp.ViewLayer
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            bool answer = EmployeeDA.EditEmployee(employee.Id, EmployeeNameTextBox.Text,
+            bool answer = EmployeesDA.EditEmployee(employee.Id, EmployeeNameTextBox.Text,
                 EmployeePhoneTextBox.Text,
                 EmployeeEmailTextBox.Text,
                 EmployeeLoginTextBox.Text,

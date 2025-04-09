@@ -28,16 +28,7 @@ namespace StaemDatabaseApp.ViewLayer
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
             // Verify customer data
-            if(ObjectNameTextBox.Text.Length == 0)
-            {
-                MessageBox.Show("Object name cannot be empty", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-            
-            // Object data is correct
-            // Inserting to database
-            bool answer = ObjectDA.addObject(ObjectClietnIDTextBox.Text, ObjectAddressTextBox.Text, ObjectTypeTextBox.Text,
-                , int.Parse(ObjectClientIDTextBox.Text));
+            bool answer = ObjectsDA.addObject(int.Parse(ObjectClietnIDTextBox.Text), ObjectAddressTextBox.Text, (ObjectTypeComboBox.SelectedValue as ComboBoxItem).Content.ToString() );
             if (answer)
             {
                 MessageBox.Show("Object was added successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);

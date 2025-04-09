@@ -156,20 +156,20 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Margin="10">
                         <Button x:Name="showObjectsButton"
-                                Content="Show Games"
+                                Content="Show Objects"
                                 Margin="5"
                                 VerticalAlignment="Center"
                                 Click="ShowObjectsButton_OnClick" />
                         <Button x:Name="addObjectButton"
-                                Content="Add Game"
+                                Content="Add Objects"
                                 Margin="5"
                                 VerticalAlignment="Center" Click="AddObjectButton_OnClick" />
                         <Button x:Name="removeObjectButton"
-                                Content="Remove Game"
+                                Content="Remove Objects"
                                 Margin="5"
                                 VerticalAlignment="Center" Click="RemoveObjectButton_OnClick" />
                         <Button x:Name="modifyObjectButton"
-                                Content="Modify Game"
+                                Content="Modify Objects"
                                 Margin="5"
                                 VerticalAlignment="Center" Click="ModifyObjectButton_OnClick" />
                         <Button x:Name="filterObjectsButton"

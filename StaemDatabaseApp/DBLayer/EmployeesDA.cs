@@ -6,7 +6,7 @@ using StaemDatabaseApp.Model;
 
 namespace StaemDatabaseApp.DBLayer
 {
-    public static class EmployeeDA
+    public static class EmployeesDA
     {
         private static MySqlCommand cmd = null;
         private static DataTable dt;

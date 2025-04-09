@@ -13,38 +13,32 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using StaemDatabaseApp.Model;
+using Object=StaemDatabaseApp.Model.Object;
 
 namespace StaemDatabaseApp.ViewLayer
 {
     /// <summary>
     /// Interaction logic for EditCustomer.xaml
     /// </summary>
-    public partial class EditEmployeeWindow : Window
+    public partial class EditObjectWindow : Window
     {
-        private Employee employee;
-        public EditEmployeeWindow(Employee employee)
+        private Object @object;
+        public EditObjectWindow(Object @object)
         {
             InitializeComponent();
-            this.employee = employee;
-            EmployeeNameTextBox.Text = employee.FullName;
-            EmployeePositionIdTextBox.Text = employee.PositionID.ToString();
-            EmployeePhoneTextBox.Text = employee.Phone;
-            EmployeeEmailTextBox.Text = employee.Email;
-            EmployeeLoginTextBox.Text = employee.Login;
-            EmployeePasswordTextBox.Text = employee.Password;
+            this.@object = @object;
+            ObjectClietnIDTextBox.Text = @object.ClientID.ToString();
+            ObjectAddressTextBox.Text = @object.Address;
+            ObjectTypeComboBox.SelectedValue = @object.Type;
+            ObjectTypeComboBox.Text = @object.Type;
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            bool answer = EmployeeDA.EditEmployee(employee.Id, EmployeeNameTextBox.Text,
-                EmployeePhoneTextBox.Text,
-                EmployeeEmailTextBox.Text,
-                EmployeeLoginTextBox.Text,
-                EmployeePasswordTextBox.Text,
-                int.Parse(EmployeePositionIdTextBox.Text));
+            bool answer = ObjectsDA.EditObject(@object.Id, int.Parse(ObjectClietnIDTextBox.Text), ObjectAddressTextBox.Text, (ObjectTypeComboBox.SelectedValue as ComboBoxItem).Content.ToString());
             if (answer)
             {
-                MessageBox.Show("Employee was edited successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Object was edited successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 Close();
             }
             else
