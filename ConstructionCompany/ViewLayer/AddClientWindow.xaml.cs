@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace StaemDatabaseApp.ViewLayer
 {
     /// <summary>
-    /// Interaction logic for AddCustomer.xaml
+    /// Interaction logic for AddClientWindow.xaml
     /// </summary>
     public partial class AddClientWindow : Window
     {
@@ -27,21 +27,21 @@ namespace StaemDatabaseApp.ViewLayer
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            // Verify customer data
-            if(customerNameTextBox.Text.Length == 0)
+            // Verify client data
+            if (customerFullNameTextBox.Text.Length == 0)
             {
                 MessageBox.Show("Client name cannot be empty", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            if (customerSurnameTextBox.Text.Length == 0)
+            if (customerPhoneTextBox.Text.Length == 0)
             {
-                MessageBox.Show("Client surname cannot be empty", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Client phone cannot be empty", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
             // Client data is correct
             // Inserting to database
-            bool answer = ClientsDA.addCustomer(customerNameTextBox.Text, customerSurnameTextBox.Text, customerPriceMultiplierTextBox.Text, CustomerGamesBoughtTextBox.Text);
+            bool answer = ClientsDA.addCustomer(customerFullNameTextBox.Text, customerPhoneTextBox.Text, customerEmailTextBox.Text, CustomerAddressTextBox.Text);
             if (answer)
             {
                 MessageBox.Show("Client was added successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
