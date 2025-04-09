@@ -15,7 +15,7 @@ namespace StaemDatabaseApp.DBLayer
 
         public static List<Material> RetrieveAllMaterials()
         {
-            var query = "SELECT * FROM ConstructionCompany.Materias;";
+            var query = "SELECT * FROM ConstructionCompany.Materials;";
             cmd = DBHelper.RunQueryNoParameters(query);
             var allEmployees = new List<Material>();
             if (cmd != null)
@@ -29,7 +29,7 @@ namespace StaemDatabaseApp.DBLayer
                     var title = dr["Title"].ToString();
                     var unit = dr["Unit"].ToString();
                     var price = decimal.Parse(dr["Price"].ToString());
-                    var stockQuantity = int.Parse(dr["StockQuantity"].ToString());
+                    var stockQuantity = decimal.Parse(dr["StockQuantity"].ToString());
                     allEmployees.Add(new Material(id, title, unit, price, stockQuantity));
                 }
             }
@@ -54,7 +54,7 @@ namespace StaemDatabaseApp.DBLayer
 
         public static bool addMaterial(string title, string unit,decimal price, decimal stockQuantity)
         {
-            string query = "INSERT INTO `ConstructionCompany`.`Materials` (`Title`, `Unit`, `Price`, `StockQuantity`, )" +
+            string query = "INSERT INTO `ConstructionCompany`.`Materials` (`Title`, `Unit`, `Price`, `StockQuantity`)" +
                 "VALUES ('" + title + "', '" + unit + "', '" + price.ToString().Replace(',','.') + "', '" + stockQuantity.ToString().Replace(',','.') + "');";
             cmd = DBHelper.RunQueryNoParameters(query);
             return cmd != null;
