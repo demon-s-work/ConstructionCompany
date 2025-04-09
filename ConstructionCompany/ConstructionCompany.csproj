@@ -191,6 +191,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DBLayer\EmployeesDA.cs" />
+    <Compile Include="DBLayer\LogsDA.cs" />
+    <Compile Include="DBLayer\MaterialsDA.cs" />
     <Compile Include="DBLayer\ObjectsDA.cs" />
     <Compile Include="DBLayer\PositionsDA.cs" />
     <Compile Include="DBLayer\ClientsDA.cs" />

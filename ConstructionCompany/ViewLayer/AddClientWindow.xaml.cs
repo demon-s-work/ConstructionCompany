@@ -41,7 +41,7 @@ namespace StaemDatabaseApp.ViewLayer
 
             // Client data is correct
             // Inserting to database
-            bool answer = ClientsDA.addCustomer(customerFullNameTextBox.Text, customerPhoneTextBox.Text, customerEmailTextBox.Text, CustomerAddressTextBox.Text);
+            bool answer = ClientsDA.addCustomer(customerFullNameTextBox.Text, customerPhoneTextBox.Text, customerEmailTextBox.Text, customerAdressTextBox.Text);
             if (answer)
             {
                 MessageBox.Show("Client was added successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);

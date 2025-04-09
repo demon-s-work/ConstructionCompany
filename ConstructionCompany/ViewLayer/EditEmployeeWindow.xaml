@@ -24,7 +24,7 @@
             <Label Content="Login:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="33" Margin="11,156,0,0" VerticalAlignment="Top" Width="100"/>
             <TextBox x:Name="EmployeeLoginTextBox" HorizontalAlignment="Left" Height="20" Margin="116,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
         </Grid>
-        <Button x:Name="addButton" Content="Add" Height="31" Margin="110,257,109.6,0" VerticalAlignment="Top" Click="EditButton_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="addButton" Content="Edit" Height="31" Margin="110,257,109.6,0" VerticalAlignment="Top" Click="EditButton_Click" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

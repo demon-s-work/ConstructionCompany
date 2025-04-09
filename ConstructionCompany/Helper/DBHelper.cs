@@ -16,39 +16,10 @@ namespace StaemDatabaseApp.Helper
         private static DataTable dt;
         private static MySqlDataAdapter sda;
 
-        public static void EstablishConnection()
-        {
-            try
-            {
-                MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
-                builder.Server = "127.0.0.1";
-                builder.UserID = "root";
-                builder.Password = "root";
-                builder.Database = "staem";
-                builder.SslMode = MySqlSslMode.Required;
-                connection = new MySqlConnection(builder.ToString());
-                connection.Open();
-                MessageBox.Show("Database connection successfull", "Connection", MessageBoxButton.OK);
-            }
-            catch (MySqlException ex)
-            {
-                switch (ex.Number)
-                {
-                    case 0:
-                        MessageBox.Show("Cannot connect to server.", "Connection", MessageBoxButton.OK, MessageBoxImage.Error);
-                        break;
-                    case 1045:
-                        MessageBox.Show("Invalid username or password, try again.", "Authorization", MessageBoxButton.OK, MessageBoxImage.Information);
-                        break;
-
-                }
-            }
-        }
-
         public static bool ConnectToDatabase(string login, string password)
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
-            builder.Server = "localhost";
+            builder.Server = "192.168.0.134";
             builder.UserID = login;
             builder.Password = password;
             builder.Database = "ConstructionCompany";
@@ -59,7 +30,6 @@ namespace StaemDatabaseApp.Helper
             {
                 connection.Open();
 
-                // Jezeli brak wyjątku -> dane logowania dobre
                 return true;
             }
             catch (MySqlException ex)
