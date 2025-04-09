@@ -112,7 +112,7 @@ namespace StaemDatabaseApp
 
 		private void ShowLogsButton_OnClick(object sender, RoutedEventArgs e)
 		{
-			throw new NotImplementedException();
+			logsDataGrip.ItemsSource = LogsDA.RetrieveAllLogs();
 		}
 
 		private void ShowMaterialsButton_OnClick(object sender, RoutedEventArgs e)

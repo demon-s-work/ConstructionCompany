@@ -80,7 +80,7 @@
                               Margin="5" />
                 </Grid>
             </TabItem>
-            <TabItem Header="Logs">
+            <TabItem Header="Log">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="145*" />
@@ -88,26 +88,10 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Margin="10">
                         <Button x:Name="showLogsButton"
-                                Content="Show Games"
+                                Content="Show Logs"
                                 Margin="5"
                                 VerticalAlignment="Center"
                                 Click="ShowLogsButton_OnClick" />
-                        <Button x:Name="addLogButton"
-                                Content="Add Game"
-                                Margin="5"
-                                VerticalAlignment="Center" Click="AddLogButton_OnClick" />
-                        <Button x:Name="removeLogButton"
-                                Content="Remove Game"
-                                Margin="5"
-                                VerticalAlignment="Center" Click="RemoveLogButton_OnClick" />
-                        <Button x:Name="modifyLogButton"
-                                Content="Modify Game"
-                                Margin="5"
-                                VerticalAlignment="Center" Click="ModifyLogButton_OnClick" />
-                        <Button x:Name="filterLogsButton"
-                            Content="Apply filter"
-                            Margin="5"
-                            VerticalAlignment="Center" Click="filterButton_Click"/>
                     </StackPanel>
                     <DataGrid x:Name="logsDataGrip"
                               Grid.Column="4"

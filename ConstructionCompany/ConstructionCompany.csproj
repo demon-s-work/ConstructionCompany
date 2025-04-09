@@ -197,7 +197,7 @@
     <Compile Include="DBLayer\PositionsDA.cs" />
     <Compile Include="DBLayer\ClientsDA.cs" />
     <Compile Include="Helper\DBHelper.cs" />
-    <Compile Include="Model\Logs.cs" />
+    <Compile Include="Model\Log.cs" />
     <Compile Include="Model\OrderMaterial.cs" />
     <Compile Include="Model\OrderWork.cs" />
     <Compile Include="Model\Material.cs" />

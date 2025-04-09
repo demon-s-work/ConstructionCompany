@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace StaemDatabaseApp.Model
 {
-    public class Logs
+    public class Log
     {
 
-        public Logs(string id, int employeeID, string action, DateTime actionDate)
+        public Log(string id, int employeeID, string action, DateTime actionDate)
         {
             int id_ = 0;
             Int32.TryParse(id, out id_);
